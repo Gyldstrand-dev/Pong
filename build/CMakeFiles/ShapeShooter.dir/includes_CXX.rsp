@@ -1,0 +1,1 @@
+-IC:/DEV/lib/Box2D/include -IC:/DEV/lib/EnTT/single_include -IC:/DEV/lib/EnTT/src -IC:/DEV/projects/SFML/Pong/src -IC:/DEV/projects/SFML/Pong/src/Game -isystem C:/DEV/lib/SFML-2.5.1/include

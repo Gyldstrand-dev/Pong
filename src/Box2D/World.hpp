@@ -4,6 +4,7 @@
 #include <box2d/b2_body.h>
 #include <box2d/b2_draw.h>
 
+
 namespace Box2D {
 	
 	
@@ -44,6 +45,8 @@ private:
 	
 	b2World world {{0.f, 0.f}};
 	
-	
-	
-};};
+};
+
+
+
+};

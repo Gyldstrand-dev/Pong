@@ -4,6 +4,7 @@
 #include <memory>
 #include <string>
 
+
 namespace Resource {
 namespace Font {
 	
@@ -19,7 +20,7 @@ struct Loader : EnTT::Resource_Loader <Resource::Font::Loader, SFML::Font> {
 	
 private:
 
-	const std::string directory {"C:/DEV/projects/SFML/Pong/src/Game/Resource/Font/"};
+	const std::string directory {"../src/Game/Resource/Font/"};
 	
 };
 	

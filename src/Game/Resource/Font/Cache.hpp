@@ -2,6 +2,7 @@
 #include "EnTT/Resource_Cache.hpp"
 #include "SFML/Font.hpp"
 
+
 namespace Resource {
 namespace Font {
 	

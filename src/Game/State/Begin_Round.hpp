@@ -35,8 +35,7 @@ public:
 	};
 	
 	void create_entities(EnTT::Registry& ecs) override {
-		
-		(void) ecs;
+	
 		create_countdown(ecs);
 		
 	};
@@ -50,7 +49,7 @@ public:
 	
 	void update(const Time::Duration& timestep) override {
 		
-		if (!countdown_int) {
+		if (!countdown_counter) {
 			
 			state_machine.event_dispatcher.enqueue <Event::Pop_State> ();			
 			state_machine.event_dispatcher.enqueue <Event::Launch_Ball> ();			
@@ -61,12 +60,12 @@ public:
 			if (duration >= 1.0s) {
 				
 				duration = 0.0s;
-				countdown_int--;
+				countdown_counter--;
 				
-				if (countdown_int) { 
+				if (countdown_counter) { 
 				
 					auto& text = static_cast <sf::Text&> (*countdown.get <Component::Graphics::Drawable> ().pointer);
-					text.setString(std::to_string(countdown_int));
+					text.setString(std::to_string(countdown_counter));
 					
 				};
 			};
@@ -92,7 +91,7 @@ public:
 	
 private:
 
-	int countdown_int {3};
+	int countdown_counter {3};
 	EnTT::Handle countdown;
 	Time::Duration duration {0.0s};
 	

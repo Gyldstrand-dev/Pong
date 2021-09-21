@@ -16,8 +16,8 @@ namespace Graphics {
 	
 struct Drawable {
 	
-	std::unique_ptr <sf::Drawable> pointer;
-	SFML::Transform transform;
+	std::unique_ptr <sf::Drawable> pointer {nullptr};
+	SFML::Transform transform {};
 	
 };
 	

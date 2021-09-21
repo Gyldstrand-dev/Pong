@@ -16,6 +16,10 @@ public:
 		return world.CreateBody(&body_definition);
 	};
 	
+	void destroy_body(b2Body* body) {
+		world.DestroyBody(body);
+	};
+	
 	void set_contact_listener(b2ContactListener* listener) {
 		world.SetContactListener(listener);
 	};

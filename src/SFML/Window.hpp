@@ -23,7 +23,7 @@ public:
 	
 	Vector_2 <unsigned int> get_size() {
 		return sfml_window.getSize();
-	};
+	};	
 	
 	bool is_open() {
 		return sfml_window.isOpen();
@@ -33,8 +33,8 @@ public:
 		return sfml_window.pollEvent(event);
 	};
 
-	void clear() {
-		sfml_window.clear();
+	void clear(const sf::Color& color = {0, 0, 0, 255}) {
+		sfml_window.clear(color);
 	};
 	
 	template <typename... Args>
@@ -56,7 +56,6 @@ private:
 	sf::View view;
 	
 };
-	
 	
 	
 	

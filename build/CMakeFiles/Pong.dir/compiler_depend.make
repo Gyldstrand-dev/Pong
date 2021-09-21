@@ -164,46 +164,23 @@ CMakeFiles/Pong.dir/main.cpp.obj: ../main.cpp \
   C:/msys64/mingw64/include/c++/10.3.0/tr1/poly_hermite.tcc \
   C:/msys64/mingw64/include/c++/10.3.0/tr1/poly_laguerre.tcc \
   C:/msys64/mingw64/include/c++/10.3.0/tr1/riemann_zeta.tcc \
-  ../src/Game/User_Data.hpp \
-  ../src/Box2D/World.hpp \
-  C:/DEV/lib/Box2D/include/box2d/b2_world.h \
-  C:/DEV/lib/Box2D/include/box2d/b2_api.h \
-  C:/DEV/lib/Box2D/include/box2d/b2_block_allocator.h \
-  C:/DEV/lib/Box2D/include/box2d/b2_settings.h \
-  C:/DEV/lib/Box2D/include/box2d/b2_types.h \
-  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/stdarg.h \
-  C:/msys64/mingw64/x86_64-w64-mingw32/include/stdarg.h \
-  C:/msys64/mingw64/x86_64-w64-mingw32/include/_mingw_stdarg.h \
-  C:/DEV/lib/Box2D/include/box2d/b2_common.h \
-  C:/msys64/mingw64/x86_64-w64-mingw32/include/assert.h \
-  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/float.h \
-  C:/msys64/mingw64/x86_64-w64-mingw32/include/float.h \
-  C:/DEV/lib/Box2D/include/box2d/b2_contact_manager.h \
-  C:/DEV/lib/Box2D/include/box2d/b2_broad_phase.h \
-  C:/DEV/lib/Box2D/include/box2d/b2_collision.h \
-  C:/DEV/lib/Box2D/include/box2d/b2_math.h \
-  C:/DEV/lib/Box2D/include/box2d/b2_dynamic_tree.h \
-  C:/DEV/lib/Box2D/include/box2d/b2_growable_stack.h \
-  C:/msys64/mingw64/x86_64-w64-mingw32/include/string.h \
-  C:/msys64/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
-  C:/DEV/lib/Box2D/include/box2d/b2_stack_allocator.h \
-  C:/DEV/lib/Box2D/include/box2d/b2_time_step.h \
-  C:/DEV/lib/Box2D/include/box2d/b2_world_callbacks.h \
-  C:/DEV/lib/Box2D/include/box2d/b2_body.h \
-  C:/DEV/lib/Box2D/include/box2d/b2_shape.h \
-  C:/DEV/lib/Box2D/include/box2d/b2_draw.h \
-  ../src/Box2D/Debug_Draw.hpp \
-  ../src/SFML/Window.hpp \
-  C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Event.hpp \
-  C:/DEV/lib/SFML-2.5.1/include/SFML/Config.hpp \
-  C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+  ../src/Game/Event/Key_Pressed.hpp \
+  C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
   C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Export.hpp \
-  C:/DEV/lib/SFML-2.5.1/include/SFML/System/String.hpp \
-  C:/DEV/lib/SFML-2.5.1/include/SFML/System/Export.hpp \
-  C:/DEV/lib/SFML-2.5.1/include/SFML/System/Utf.hpp \
-  C:/msys64/mingw64/include/c++/10.3.0/algorithm \
+  C:/DEV/lib/SFML-2.5.1/include/SFML/Config.hpp \
+  ../src/Game/Event/Key_Released.hpp \
+  ../src/EnTT/Registry.hpp \
+  C:/DEV/lib/EnTT/single_include/entt/entt.hpp \
+  C:/msys64/mingw64/include/c++/10.3.0/vector \
+  C:/msys64/mingw64/include/c++/10.3.0/bits/stl_uninitialized.h \
+  C:/msys64/mingw64/include/c++/10.3.0/bits/stl_vector.h \
+  C:/msys64/mingw64/include/c++/10.3.0/bits/stl_bvector.h \
+  C:/msys64/mingw64/include/c++/10.3.0/bits/vector.tcc \
   C:/msys64/mingw64/include/c++/10.3.0/utility \
   C:/msys64/mingw64/include/c++/10.3.0/bits/stl_relops.h \
+  C:/msys64/mingw64/include/c++/10.3.0/iterator \
+  C:/msys64/mingw64/include/c++/10.3.0/bits/stream_iterator.h \
+  C:/msys64/mingw64/include/c++/10.3.0/algorithm \
   C:/msys64/mingw64/include/c++/10.3.0/bits/stl_algo.h \
   C:/msys64/mingw64/include/c++/10.3.0/bits/algorithmfwd.h \
   C:/msys64/mingw64/include/c++/10.3.0/bits/stl_heap.h \
@@ -226,12 +203,75 @@ CMakeFiles/Pong.dir/main.cpp.obj: ../main.cpp \
   C:/msys64/mingw64/include/c++/10.3.0/bits/enable_special_members.h \
   C:/msys64/mingw64/include/c++/10.3.0/bits/unordered_map.h \
   C:/msys64/mingw64/include/c++/10.3.0/bits/erase_if.h \
-  C:/msys64/mingw64/include/c++/10.3.0/vector \
-  C:/msys64/mingw64/include/c++/10.3.0/bits/stl_uninitialized.h \
-  C:/msys64/mingw64/include/c++/10.3.0/bits/stl_vector.h \
-  C:/msys64/mingw64/include/c++/10.3.0/bits/stl_bvector.h \
-  C:/msys64/mingw64/include/c++/10.3.0/bits/vector.tcc \
   C:/msys64/mingw64/include/c++/10.3.0/pstl/execution_defs.h \
+  C:/msys64/mingw64/include/c++/10.3.0/cassert \
+  C:/msys64/mingw64/x86_64-w64-mingw32/include/assert.h \
+  C:/msys64/mingw64/include/c++/10.3.0/cstddef \
+  C:/msys64/mingw64/include/c++/10.3.0/memory \
+  C:/msys64/mingw64/include/c++/10.3.0/bits/stl_raw_storage_iter.h \
+  C:/msys64/mingw64/include/c++/10.3.0/bits/ranges_uninitialized.h \
+  C:/msys64/mingw64/include/c++/10.3.0/ext/concurrence.h \
+  C:/msys64/mingw64/include/c++/10.3.0/bits/unique_ptr.h \
+  C:/msys64/mingw64/include/c++/10.3.0/bits/shared_ptr.h \
+  C:/msys64/mingw64/include/c++/10.3.0/bits/shared_ptr_base.h \
+  C:/msys64/mingw64/include/c++/10.3.0/bits/allocated_ptr.h \
+  C:/msys64/mingw64/include/c++/10.3.0/bits/shared_ptr_atomic.h \
+  C:/msys64/mingw64/include/c++/10.3.0/bits/atomic_base.h \
+  C:/msys64/mingw64/include/c++/10.3.0/bits/atomic_lockfree_defines.h \
+  C:/msys64/mingw64/include/c++/10.3.0/backward/auto_ptr.h \
+  C:/msys64/mingw64/include/c++/10.3.0/pstl/glue_memory_defs.h \
+  C:/msys64/mingw64/include/c++/10.3.0/map \
+  C:/msys64/mingw64/include/c++/10.3.0/bits/stl_tree.h \
+  C:/msys64/mingw64/include/c++/10.3.0/bits/stl_map.h \
+  C:/msys64/mingw64/include/c++/10.3.0/bits/stl_multimap.h \
+  C:/msys64/mingw64/include/c++/10.3.0/set \
+  C:/msys64/mingw64/include/c++/10.3.0/bits/stl_set.h \
+  C:/msys64/mingw64/include/c++/10.3.0/bits/stl_multiset.h \
+  C:/msys64/mingw64/include/c++/10.3.0/unordered_set \
+  C:/msys64/mingw64/include/c++/10.3.0/bits/unordered_set.h \
+  C:/msys64/mingw64/include/c++/10.3.0/list \
+  C:/msys64/mingw64/include/c++/10.3.0/bits/stl_list.h \
+  C:/msys64/mingw64/include/c++/10.3.0/bits/list.tcc \
+  ../src/EnTT/Entity.hpp \
+  ../src/EnTT/Handle.hpp \
+  C:/DEV/lib/EnTT/src/entt/entity/handle.hpp \
+  ../src/EnTT/Event_Dispatcher.hpp \
+  C:/DEV/lib/EnTT/src/entt/signal/dispatcher.hpp \
+  ../src/EnTT/Hashed_String.hpp \
+  C:/DEV/lib/EnTT/src/entt/core/hashed_string.hpp \
+  ../src/Box2D/World.hpp \
+  C:/DEV/lib/Box2D/include/box2d/b2_world.h \
+  C:/DEV/lib/Box2D/include/box2d/b2_api.h \
+  C:/DEV/lib/Box2D/include/box2d/b2_block_allocator.h \
+  C:/DEV/lib/Box2D/include/box2d/b2_settings.h \
+  C:/DEV/lib/Box2D/include/box2d/b2_types.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/stdarg.h \
+  C:/msys64/mingw64/x86_64-w64-mingw32/include/stdarg.h \
+  C:/msys64/mingw64/x86_64-w64-mingw32/include/_mingw_stdarg.h \
+  C:/DEV/lib/Box2D/include/box2d/b2_common.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/float.h \
+  C:/msys64/mingw64/x86_64-w64-mingw32/include/float.h \
+  C:/DEV/lib/Box2D/include/box2d/b2_contact_manager.h \
+  C:/DEV/lib/Box2D/include/box2d/b2_broad_phase.h \
+  C:/DEV/lib/Box2D/include/box2d/b2_collision.h \
+  C:/DEV/lib/Box2D/include/box2d/b2_math.h \
+  C:/DEV/lib/Box2D/include/box2d/b2_dynamic_tree.h \
+  C:/DEV/lib/Box2D/include/box2d/b2_growable_stack.h \
+  C:/msys64/mingw64/x86_64-w64-mingw32/include/string.h \
+  C:/msys64/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
+  C:/DEV/lib/Box2D/include/box2d/b2_stack_allocator.h \
+  C:/DEV/lib/Box2D/include/box2d/b2_time_step.h \
+  C:/DEV/lib/Box2D/include/box2d/b2_world_callbacks.h \
+  C:/DEV/lib/Box2D/include/box2d/b2_body.h \
+  C:/DEV/lib/Box2D/include/box2d/b2_shape.h \
+  C:/DEV/lib/Box2D/include/box2d/b2_draw.h \
+  ../src/Box2D/Debug_Draw.hpp \
+  ../src/SFML/Window.hpp \
+  C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Event.hpp \
+  C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+  C:/DEV/lib/SFML-2.5.1/include/SFML/System/String.hpp \
+  C:/DEV/lib/SFML-2.5.1/include/SFML/System/Export.hpp \
+  C:/DEV/lib/SFML-2.5.1/include/SFML/System/Utf.hpp \
   C:/msys64/mingw64/include/c++/10.3.0/locale \
   C:/msys64/mingw64/include/c++/10.3.0/bits/locale_facets_nonio.h \
   C:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/time_members.h \
@@ -239,12 +279,8 @@ CMakeFiles/Pong.dir/main.cpp.obj: ../main.cpp \
   C:/msys64/mingw64/include/c++/10.3.0/bits/codecvt.h \
   C:/msys64/mingw64/include/c++/10.3.0/bits/locale_facets_nonio.tcc \
   C:/msys64/mingw64/include/c++/10.3.0/bits/locale_conv.h \
-  C:/msys64/mingw64/include/c++/10.3.0/bits/unique_ptr.h \
   C:/DEV/lib/SFML-2.5.1/include/SFML/System/Utf.inl \
-  C:/msys64/mingw64/include/c++/10.3.0/iterator \
-  C:/msys64/mingw64/include/c++/10.3.0/bits/stream_iterator.h \
   C:/DEV/lib/SFML-2.5.1/include/SFML/System/String.inl \
-  C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
   C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Mouse.hpp \
   C:/DEV/lib/SFML-2.5.1/include/SFML/System/Vector2.hpp \
   C:/DEV/lib/SFML-2.5.1/include/SFML/System/Vector2.inl \
@@ -282,88 +318,80 @@ CMakeFiles/Pong.dir/main.cpp.obj: ../main.cpp \
   C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
   C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
   C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+  ../src/Game/System/Physics.hpp \
+  ../src/Box2D/Body.hpp \
+  ../src/Game/Component/Physics/Body.hpp \
+  ../src/Game/System/Collision.hpp \
+  ../src/Game/User_Data.hpp \
+  ../src/Game/Event/Scored.hpp \
+  C:/DEV/lib/Box2D/include/box2d/b2_world_callbacks.h \
+  C:/DEV/lib/Box2D/include/box2d/b2_contact.h \
+  C:/DEV/lib/Box2D/include/box2d/b2_fixture.h \
+  C:/DEV/lib/Box2D/include/box2d/b2_body.h \
+  ../src/Game/System/Graphics.hpp \
+  ../src/Game/Component/Graphics/Drawable.hpp \
+  C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+  C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+  C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+  C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+  ../src/Game/Resource/Font/Loader.hpp \
+  ../src/EnTT/Resource_Loader.hpp \
+  C:/DEV/lib/EnTT/src/entt/resource/loader.hpp \
+  ../src/SFML/Font.hpp \
+  ../src/Game/Resource/Font/Cache.hpp \
+  ../src/EnTT/Resource_Cache.hpp \
+  C:/DEV/lib/EnTT/src/entt/resource/cache.hpp \
+  ../src/Game/State/Machine.hpp \
+  ../src/Game/State/Base.hpp \
+  ../src/Game/Event/Push_State.hpp \
+  ../src/Game/Event/Pop_State.hpp \
+  ../src/Game/State/Intro.hpp \
+  ../src/Game/State/Main_Menu.hpp \
+  ../src/Game/State/Play.hpp \
+  ../src/Game/State/End_Round.hpp \
+  ../src/Game/Event/Reset.hpp \
+  ../src/Game/State/Begin_Round.hpp \
+  ../src/Game/Event/Launch_Ball.hpp \
   ../src/Box2D/Shape.hpp \
   C:/DEV/lib/Box2D/include/box2d/b2_circle_shape.h \
   C:/DEV/lib/Box2D/include/box2d/b2_polygon_shape.h \
   C:/DEV/lib/Box2D/include/box2d/b2_edge_shape.h \
   C:/DEV/lib/Box2D/include/box2d/b2_chain_shape.h \
   C:/DEV/lib/Box2D/include/box2d/b2_math.h \
-  ../src/Box2D/Body.hpp \
   ../src/Box2D/Body_Builder.hpp \
   ../src/Box2D/Fixture_Builder.hpp \
   C:/DEV/lib/Box2D/include/box2d/b2_fixture.h \
-  C:/DEV/lib/Box2D/include/box2d/b2_body.h \
   C:/DEV/lib/Box2D/include/box2d/b2_shape.h \
-  ../src/Box2D/Contact_Listener.hpp \
-  ../src/EnTT/Event_Dispatcher.hpp \
-  C:/DEV/lib/EnTT/src/entt/signal/dispatcher.hpp \
-  C:/msys64/mingw64/include/c++/10.3.0/cstddef \
-  C:/msys64/mingw64/include/c++/10.3.0/memory \
-  C:/msys64/mingw64/include/c++/10.3.0/bits/stl_raw_storage_iter.h \
-  C:/msys64/mingw64/include/c++/10.3.0/bits/ranges_uninitialized.h \
-  C:/msys64/mingw64/include/c++/10.3.0/ext/concurrence.h \
-  C:/msys64/mingw64/include/c++/10.3.0/bits/shared_ptr.h \
-  C:/msys64/mingw64/include/c++/10.3.0/bits/shared_ptr_base.h \
-  C:/msys64/mingw64/include/c++/10.3.0/bits/allocated_ptr.h \
-  C:/msys64/mingw64/include/c++/10.3.0/bits/shared_ptr_atomic.h \
-  C:/msys64/mingw64/include/c++/10.3.0/bits/atomic_base.h \
-  C:/msys64/mingw64/include/c++/10.3.0/bits/atomic_lockfree_defines.h \
-  C:/msys64/mingw64/include/c++/10.3.0/backward/auto_ptr.h \
-  C:/msys64/mingw64/include/c++/10.3.0/pstl/glue_memory_defs.h \
-  C:/DEV/lib/EnTT/src/entt/config/config.h \
-  C:/msys64/mingw64/include/c++/10.3.0/cassert \
-  C:/DEV/lib/EnTT/src/entt/core/fwd.hpp \
-  C:/DEV/lib/EnTT/src/entt/config/config.h \
-  C:/DEV/lib/EnTT/src/entt/core/type_info.hpp \
-  C:/DEV/lib/EnTT/src/entt/core/attribute.h \
-  C:/DEV/lib/EnTT/src/entt/core/hashed_string.hpp \
-  C:/DEV/lib/EnTT/src/entt/core/fwd.hpp \
-  C:/DEV/lib/EnTT/src/entt/signal/sigh.hpp \
-  C:/DEV/lib/EnTT/src/entt/signal/delegate.hpp \
-  C:/DEV/lib/EnTT/src/entt/core/type_traits.hpp \
-  C:/DEV/lib/EnTT/src/entt/signal/fwd.hpp \
-  ../src/Game/Event/Scored.hpp \
-  C:/DEV/lib/Box2D/include/box2d/b2_world_callbacks.h \
-  C:/DEV/lib/Box2D/include/box2d/b2_contact.h \
-  C:/DEV/lib/Box2D/include/box2d/b2_fixture.h \
-  ../src/EnTT/Registry.hpp \
-  C:/DEV/lib/EnTT/single_include/entt/entt.hpp \
-  C:/msys64/mingw64/include/c++/10.3.0/map \
-  C:/msys64/mingw64/include/c++/10.3.0/bits/stl_tree.h \
-  C:/msys64/mingw64/include/c++/10.3.0/bits/stl_map.h \
-  C:/msys64/mingw64/include/c++/10.3.0/bits/stl_multimap.h \
-  C:/msys64/mingw64/include/c++/10.3.0/set \
-  C:/msys64/mingw64/include/c++/10.3.0/bits/stl_set.h \
-  C:/msys64/mingw64/include/c++/10.3.0/bits/stl_multiset.h \
-  C:/msys64/mingw64/include/c++/10.3.0/unordered_set \
-  C:/msys64/mingw64/include/c++/10.3.0/bits/unordered_set.h \
-  C:/msys64/mingw64/include/c++/10.3.0/list \
-  C:/msys64/mingw64/include/c++/10.3.0/bits/stl_list.h \
-  C:/msys64/mingw64/include/c++/10.3.0/bits/list.tcc \
-  ../src/EnTT/Entity.hpp \
-  ../src/EnTT/Handle.hpp \
-  C:/DEV/lib/EnTT/src/entt/entity/handle.hpp \
-  ../src/Game/Component/Physics/Body.hpp \
-  ../src/Game/Component/Graphics/Drawable.hpp \
-  C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Text.hpp \
-  C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Font.hpp \
-  C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
-  C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
-  ../src/Game/Component/Score.hpp \
-  ../src/Game/Component/Timer.hpp \
-  ../src/Game/System/Physics.hpp \
-  ../src/Game/System/Graphics.hpp \
-  ../src/Game/System/Timer.hpp \
-  ../src/Game/System/Score.hpp
+  ../src/Game/Component/Score.hpp
 
 
-../src/Game/System/Timer.hpp:
+C:/DEV/lib/Box2D/include/box2d/b2_chain_shape.h:
 
-../src/Game/System/Graphics.hpp:
+C:/DEV/lib/Box2D/include/box2d/b2_polygon_shape.h:
 
-../src/Game/Component/Timer.hpp:
+../src/Box2D/Shape.hpp:
+
+../src/Game/Event/Launch_Ball.hpp:
 
 ../src/Game/Component/Score.hpp:
+
+../src/Game/State/Begin_Round.hpp:
+
+../src/Game/State/Intro.hpp:
+
+../src/Game/Event/Pop_State.hpp:
+
+../src/Game/Event/Push_State.hpp:
+
+../src/Game/State/Machine.hpp:
+
+../src/EnTT/Resource_Cache.hpp:
+
+../src/Game/Resource/Font/Cache.hpp:
+
+C:/DEV/lib/EnTT/src/entt/resource/loader.hpp:
+
+../src/Game/Resource/Font/Loader.hpp:
 
 C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Texture.hpp:
 
@@ -371,69 +399,15 @@ C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Font.hpp:
 
 ../src/Game/Component/Graphics/Drawable.hpp:
 
-C:/DEV/lib/EnTT/src/entt/entity/handle.hpp:
-
-../src/EnTT/Handle.hpp:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/list.tcc:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/stl_list.h:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/stl_multiset.h:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/stl_set.h:
-
-C:/msys64/mingw64/include/c++/10.3.0/set:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/stl_multimap.h:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/stl_map.h:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/stl_tree.h:
-
-C:/DEV/lib/EnTT/single_include/entt/entt.hpp:
-
-../src/Game/Event/Scored.hpp:
-
-C:/DEV/lib/EnTT/src/entt/signal/fwd.hpp:
-
-C:/DEV/lib/EnTT/src/entt/signal/delegate.hpp:
-
-C:/DEV/lib/EnTT/src/entt/signal/sigh.hpp:
-
-C:/DEV/lib/EnTT/src/entt/core/hashed_string.hpp:
-
-C:/msys64/mingw64/include/c++/10.3.0/pstl/glue_memory_defs.h:
-
-C:/msys64/mingw64/include/c++/10.3.0/backward/auto_ptr.h:
-
-C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Text.hpp:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/allocated_ptr.h:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/shared_ptr_base.h:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/shared_ptr.h:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/ranges_uninitialized.h:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/stl_raw_storage_iter.h:
-
-C:/msys64/mingw64/include/c++/10.3.0/cstddef:
+../src/Game/System/Graphics.hpp:
 
 C:/DEV/lib/Box2D/include/box2d/b2_fixture.h:
 
+../src/Game/Event/Scored.hpp:
+
+../src/Game/User_Data.hpp:
+
 ../src/Box2D/Body.hpp:
-
-C:/DEV/lib/Box2D/include/box2d/b2_chain_shape.h:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/atomic_lockfree_defines.h:
-
-C:/DEV/lib/Box2D/include/box2d/b2_edge_shape.h:
-
-C:/DEV/lib/Box2D/include/box2d/b2_polygon_shape.h:
-
-../src/Box2D/Shape.hpp:
 
 C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp:
 
@@ -465,6 +439,54 @@ C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/View.hpp:
 
 C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Rect.inl:
 
+C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp:
+
+C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp:
+
+C:/DEV/lib/SFML-2.5.1/include/SFML/System/Vector3.inl:
+
+C:/DEV/lib/SFML-2.5.1/include/SFML/System/Vector3.hpp:
+
+C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Shape.hpp:
+
+C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp:
+
+C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Sensor.hpp:
+
+C:/DEV/lib/SFML-2.5.1/include/SFML/System/Vector2.inl:
+
+C:/DEV/lib/SFML-2.5.1/include/SFML/System/Vector2.hpp:
+
+C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Mouse.hpp:
+
+C:/DEV/lib/SFML-2.5.1/include/SFML/System/String.inl:
+
+C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Export.hpp:
+
+C:/DEV/lib/SFML-2.5.1/include/SFML/System/Utf.inl:
+
+C:/msys64/mingw64/include/c++/10.3.0/bits/locale_facets_nonio.tcc:
+
+C:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/messages_members.h:
+
+C:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/time_members.h:
+
+C:/msys64/mingw64/include/c++/10.3.0/locale:
+
+C:/DEV/lib/SFML-2.5.1/include/SFML/System/Utf.hpp:
+
+../src/SFML/Window.hpp:
+
+../src/Box2D/Debug_Draw.hpp:
+
+C:/DEV/lib/Box2D/include/box2d/b2_shape.h:
+
+C:/DEV/lib/Box2D/include/box2d/b2_body.h:
+
+C:/DEV/lib/Box2D/include/box2d/b2_time_step.h:
+
+C:/msys64/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h:
+
 C:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/error_constants.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/stdexcept:
@@ -479,11 +501,13 @@ C:/msys64/mingw64/include/c++/10.3.0/cstdint:
 
 C:/msys64/mingw64/include/c++/10.3.0/tr1/poly_hermite.tcc:
 
-C:/msys64/mingw64/include/c++/10.3.0/ext/concurrence.h:
+C:/DEV/lib/Box2D/include/box2d/b2_world_callbacks.h:
 
-C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp:
+C:/msys64/mingw64/include/c++/10.3.0/bits/functional_hash.h:
 
-C:/msys64/mingw64/include/c++/10.3.0/ext/string_conversions.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/locale_facets_nonio.h:
+
+C:/msys64/mingw64/include/c++/10.3.0/string_view:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/allocator.h:
 
@@ -495,6 +519,8 @@ C:/msys64/mingw64/include/c++/10.3.0/bits/hash_bytes.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/parse_numbers.h:
 
+../src/Game/State/Main_Menu.hpp:
+
 C:/msys64/mingw64/include/c++/10.3.0/bits/range_cmp.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/streambuf_iterator.h:
@@ -505,10 +531,6 @@ C:/msys64/mingw64/x86_64-w64-mingw32/include/stdio.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/cxxabi_forced.h:
 
-../src/EnTT/Event_Dispatcher.hpp:
-
-C:/msys64/mingw64/include/c++/10.3.0/ext/new_allocator.h:
-
 ../src/SFML/Transform.hpp:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/locale_classes.h:
@@ -517,21 +539,23 @@ C:/msys64/mingw64/x86_64-w64-mingw32/include/ctype.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/std_abs.h:
 
-C:/msys64/mingw64/include/c++/10.3.0/locale:
-
 C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp:
 
 C:/msys64/mingw64/x86_64-w64-mingw32/include/pthread_unistd.h:
 
+C:/DEV/lib/SFML-2.5.1/include/SFML/System/Time.hpp:
+
+C:/msys64/mingw64/include/c++/10.3.0/cerrno:
+
 C:/msys64/mingw64/x86_64-w64-mingw32/include/wctype.h:
 
-../src/EnTT/Registry.hpp:
-
-C:/msys64/mingw64/x86_64-w64-mingw32/include/pthread_time.h:
+../src/EnTT/Hashed_String.hpp:
 
 C:/msys64/mingw64/x86_64-w64-mingw32/include/pthread_compat.h:
 
 C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Export.hpp:
+
+C:/msys64/mingw64/include/c++/10.3.0/bits/shared_ptr_base.h:
 
 C:/msys64/mingw64/x86_64-w64-mingw32/include/sys/timeb.h:
 
@@ -539,13 +563,11 @@ C:/msys64/mingw64/x86_64-w64-mingw32/include/time.h:
 
 C:/DEV/lib/Box2D/include/box2d/b2_circle_shape.h:
 
+../src/Game/State/Base.hpp:
+
 C:/msys64/mingw64/include/c++/10.3.0/bits/ostream_insert.h:
 
-C:/DEV/lib/EnTT/src/entt/core/fwd.hpp:
-
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/10.3.0/include-fixed/syslimits.h:
-
-C:/DEV/lib/SFML-2.5.1/include/SFML/System/Vector3.inl:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/char_traits.h:
 
@@ -554,6 +576,12 @@ C:/msys64/mingw64/x86_64-w64-mingw32/include/corecrt_startup.h:
 C:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/os_defines.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/vector.tcc:
+
+C:/DEV/lib/SFML-2.5.1/include/SFML/System/String.hpp:
+
+C:/msys64/mingw64/x86_64-w64-mingw32/include/sys/types.h:
+
+C:/msys64/mingw64/include/c++/10.3.0/bits/ranges_uninitialized.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/alloc_traits.h:
 
@@ -565,19 +593,25 @@ C:/msys64/mingw64/include/c++/10.3.0/ext/alloc_traits.h:
 
 C:/msys64/mingw64/x86_64-w64-mingw32/include/corecrt.h:
 
+C:/msys64/mingw64/include/c++/10.3.0/ext/new_allocator.h:
+
+../src/EnTT/Event_Dispatcher.hpp:
+
 C:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/gthr.h:
 
-C:/msys64/mingw64/x86_64-w64-mingw32/include/sys/types.h:
-
-C:/DEV/lib/SFML-2.5.1/include/SFML/System/String.hpp:
-
-C:/msys64/mingw64/include/c++/10.3.0/string_view:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/locale_facets_nonio.h:
+C:/msys64/mingw64/include/c++/10.3.0/backward/auto_ptr.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/ios_base.h:
 
 C:/msys64/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h:
+
+C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Event.hpp:
+
+C:/msys64/mingw64/x86_64-w64-mingw32/include/sec_api/wchar_s.h:
+
+C:/DEV/lib/Box2D/include/box2d/b2_stack_allocator.h:
+
+C:/msys64/mingw64/include/c++/10.3.0/bits/cxxabi_init_exception.h:
 
 C:/msys64/mingw64/x86_64-w64-mingw32/include/locale.h:
 
@@ -585,19 +619,13 @@ C:/msys64/mingw64/include/c++/10.3.0/bits/stl_algobase.h:
 
 C:/msys64/mingw64/x86_64-w64-mingw32/include/wchar.h:
 
-C:/msys64/mingw64/include/c++/10.3.0/bits/shared_ptr_atomic.h:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/postypes.h:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/stl_heap.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/stl_multiset.h:
 
 C:/DEV/lib/SFML-2.5.1/include/SFML/Window/WindowHandle.hpp:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/stl_vector.h:
 
-C:/DEV/lib/EnTT/src/entt/signal/dispatcher.hpp:
-
-C:/msys64/mingw64/x86_64-w64-mingw32/include/_mingw_secapi.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/stl_heap.h:
 
 C:/DEV/lib/Box2D/include/box2d/b2_contact.h:
 
@@ -614,8 +642,6 @@ C:/msys64/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h:
 C:/msys64/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/system_error:
-
-C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Mouse.hpp:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/basic_string.h:
 
@@ -635,15 +661,11 @@ C:/DEV/lib/Box2D/include/box2d/b2_contact_manager.h:
 
 C:/msys64/mingw64/x86_64-w64-mingw32/include/vadefs.h:
 
-C:/DEV/lib/EnTT/src/entt/config/config.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/stl_raw_storage_iter.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/cwchar:
 
 C:/msys64/mingw64/x86_64-w64-mingw32/include/corecrt_stdio_config.h:
-
-../src/Game/System/Score.hpp:
-
-C:/DEV/lib/Box2D/include/box2d/b2_body.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/iosfwd:
 
@@ -659,13 +681,9 @@ C:/msys64/mingw64/include/c++/10.3.0/tr1/ell_integral.tcc:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/unique_ptr.h:
 
-C:/DEV/lib/SFML-2.5.1/include/SFML/System/String.inl:
-
 C:/msys64/mingw64/include/c++/10.3.0/bits/atomic_base.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/exception:
-
-C:/DEV/lib/EnTT/src/entt/core/type_info.hpp:
 
 C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Joystick.hpp:
 
@@ -676,6 +694,10 @@ C:/msys64/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h:
 C:/DEV/lib/Box2D/include/box2d/b2_broad_phase.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/pstl/pstl_config.h:
+
+C:/DEV/lib/SFML-2.5.1/include/SFML/Window/VideoMode.hpp:
+
+C:/msys64/mingw64/include/c++/10.3.0/bits/concept_check.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/stdlib.h:
 
@@ -703,6 +725,10 @@ C:/msys64/mingw64/include/c++/10.3.0/new:
 
 C:/msys64/mingw64/include/c++/10.3.0/ios:
 
+C:/msys64/mingw64/include/c++/10.3.0/bits/locale_conv.h:
+
+C:/msys64/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h:
+
 C:/msys64/mingw64/include/c++/10.3.0/bits/locale_facets.tcc:
 
 C:/msys64/mingw64/include/c++/10.3.0/backward/binders.h:
@@ -719,23 +745,25 @@ C:/msys64/mingw64/include/c++/10.3.0/vector:
 
 C:/msys64/mingw64/x86_64-w64-mingw32/include/pthread.h:
 
-C:/msys64/mingw64/include/c++/10.3.0/cassert:
-
-C:/msys64/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h:
-
 C:/msys64/mingw64/include/c++/10.3.0/tr1/riemann_zeta.tcc:
 
 C:/DEV/lib/Box2D/include/box2d/b2_world.h:
+
+C:/msys64/mingw64/include/c++/10.3.0/bits/postypes.h:
+
+C:/msys64/mingw64/include/c++/10.3.0/bits/shared_ptr_atomic.h:
 
 C:/msys64/mingw64/x86_64-w64-mingw32/include/stddef.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/exception.h:
 
-../src/Game/User_Data.hpp:
+../src/Game/System/Collision.hpp:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/node_handle.h:
 
-C:/DEV/lib/EnTT/src/entt/core/attribute.h:
+../src/Game/State/End_Round.hpp:
+
+C:/DEV/lib/EnTT/src/entt/resource/cache.hpp:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/predefined_ops.h:
 
@@ -751,6 +779,8 @@ C:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/c++locale.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/tr1/legendre_function.tcc:
 
+C:/msys64/mingw64/include/c++/10.3.0/bits/stl_map.h:
+
 C:/msys64/mingw64/include/c++/10.3.0/bits/exception_defines.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/range_access.h:
@@ -761,9 +791,17 @@ C:/msys64/mingw64/include/c++/10.3.0/bits/locale_classes.tcc:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/stddef.h:
 
-C:/msys64/mingw64/include/c++/10.3.0/memory:
+C:/msys64/mingw64/x86_64-w64-mingw32/include/pthread_time.h:
 
-C:/msys64/mingw64/include/c++/10.3.0/bits/stl_tempbuf.h:
+../src/EnTT/Registry.hpp:
+
+C:/DEV/lib/SFML-2.5.1/include/SFML/Window/WindowStyle.hpp:
+
+C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Color.hpp:
+
+C:/DEV/lib/Box2D/include/box2d/b2_types.h:
+
+../src/EnTT/Resource_Loader.hpp:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/memoryfwd.h:
 
@@ -797,12 +835,6 @@ C:/msys64/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/stl_iterator.h:
 
-C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp:
-
-C:/msys64/mingw64/include/c++/10.3.0/list:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/ptr_traits.h:
-
 C:/msys64/mingw64/x86_64-w64-mingw32/include/process.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/c++allocator.h:
@@ -819,11 +851,9 @@ C:/msys64/mingw64/include/c++/10.3.0/bits/basic_ios.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/tuple:
 
+../src/Game/Event/Reset.hpp:
+
 C:/msys64/mingw64/include/c++/10.3.0/cwctype:
-
-C:/msys64/mingw64/x86_64-w64-mingw32/include/sec_api/wchar_s.h:
-
-C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Event.hpp:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/stl_relops.h:
 
@@ -837,13 +867,15 @@ C:/msys64/mingw64/include/c++/10.3.0/bits/exception_ptr.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/unordered_map:
 
-C:/DEV/lib/SFML-2.5.1/include/SFML/System/Vector3.hpp:
-
 C:/msys64/mingw64/include/c++/10.3.0/bits/basic_ios.tcc:
 
 C:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/atomic_word.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/istream:
+
+C:/msys64/mingw64/x86_64-w64-mingw32/include/_mingw_secapi.h:
+
+C:/DEV/lib/EnTT/src/entt/signal/dispatcher.hpp:
 
 C:/msys64/mingw64/include/c++/10.3.0/chrono:
 
@@ -853,11 +885,17 @@ C:/msys64/mingw64/include/c++/10.3.0/tr1/hypergeometric.tcc:
 
 C:/DEV/lib/Box2D/include/box2d/b2_block_allocator.h:
 
-../src/Box2D/Debug_Draw.hpp:
+C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Image.hpp:
+
+C:/msys64/mingw64/include/c++/10.3.0/bits/codecvt.h:
+
+C:/msys64/mingw64/x86_64-w64-mingw32/include/float.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/move.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/limits:
+
+C:/msys64/mingw64/include/c++/10.3.0/bits/stl_multimap.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/iterator_concepts.h:
 
@@ -869,8 +907,6 @@ C:/msys64/mingw64/include/c++/10.3.0/bits/uses_allocator.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/cmath:
 
-C:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/messages_members.h:
-
 C:/msys64/mingw64/x86_64-w64-mingw32/include/math.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/hashtable_policy.h:
@@ -881,19 +917,13 @@ C:/msys64/mingw64/include/c++/10.3.0/bits/unordered_set.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/stl_bvector.h:
 
-C:/DEV/lib/EnTT/src/entt/core/type_traits.hpp:
-
 C:/msys64/mingw64/x86_64-w64-mingw32/include/limits.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/tr1/gamma.tcc:
 
+C:/msys64/mingw64/include/c++/10.3.0/bits/list.tcc:
+
 C:/msys64/mingw64/include/c++/10.3.0/tr1/special_function_util.h:
-
-C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Image.hpp:
-
-C:/msys64/mingw64/x86_64-w64-mingw32/include/float.h:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/codecvt.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/c++config.h:
 
@@ -911,17 +941,109 @@ C:/msys64/mingw64/include/c++/10.3.0/tr1/modified_bessel_func.tcc:
 
 C:/msys64/mingw64/include/c++/10.3.0/tr1/poly_laguerre.tcc:
 
-C:/DEV/lib/Box2D/include/box2d/b2_api.h:
+../src/Game/Event/Key_Pressed.hpp:
+
+../src/Game/Event/Key_Released.hpp:
+
+C:/DEV/lib/EnTT/single_include/entt/entt.hpp:
+
+C:/msys64/mingw64/include/c++/10.3.0/utility:
+
+C:/msys64/mingw64/include/c++/10.3.0/bits/locale_facets.h:
+
+C:/msys64/mingw64/include/c++/10.3.0/iterator:
+
+C:/msys64/mingw64/x86_64-w64-mingw32/include/crtdefs.h:
+
+C:/msys64/mingw64/include/c++/10.3.0/bits/stream_iterator.h:
+
+C:/msys64/mingw64/include/c++/10.3.0/bits/stl_algo.h:
+
+C:/msys64/mingw64/include/c++/10.3.0/bits/ptr_traits.h:
+
+C:/msys64/mingw64/include/c++/10.3.0/list:
+
+C:/msys64/mingw64/include/c++/10.3.0/debug/debug.h:
+
+C:/msys64/mingw64/include/c++/10.3.0/math.h:
+
+C:/msys64/mingw64/include/c++/10.3.0/bits/uniform_int_dist.h:
+
+C:/msys64/mingw64/include/c++/10.3.0/array:
+
+C:/msys64/mingw64/include/c++/10.3.0/bits/refwrap.h:
+
+C:/msys64/mingw64/include/c++/10.3.0/ext/aligned_buffer.h:
+
+C:/msys64/mingw64/include/c++/10.3.0/bits/hashtable.h:
 
 C:/msys64/mingw64/x86_64-w64-mingw32/include/pthread_signal.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/optional:
 
-C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Shape.hpp:
+C:/DEV/lib/Box2D/include/box2d/b2_api.h:
 
-C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp:
+../src/Game/State/Play.hpp:
 
-C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Sensor.hpp:
+C:/msys64/mingw64/include/c++/10.3.0/bits/enable_special_members.h:
+
+C:/msys64/mingw64/include/c++/10.3.0/bits/unordered_map.h:
+
+C:/msys64/mingw64/include/c++/10.3.0/bits/erase_if.h:
+
+C:/msys64/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h:
+
+C:/msys64/mingw64/include/c++/10.3.0/cassert:
+
+C:/msys64/mingw64/include/c++/10.3.0/algorithm:
+
+C:/msys64/mingw64/x86_64-w64-mingw32/include/assert.h:
+
+C:/msys64/mingw64/include/c++/10.3.0/cstddef:
+
+C:/msys64/mingw64/include/c++/10.3.0/bits/stl_tempbuf.h:
+
+C:/msys64/mingw64/include/c++/10.3.0/memory:
+
+C:/DEV/lib/Box2D/include/box2d/b2_edge_shape.h:
+
+C:/msys64/mingw64/include/c++/10.3.0/bits/atomic_lockfree_defines.h:
+
+C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp:
+
+C:/msys64/mingw64/include/c++/10.3.0/ext/string_conversions.h:
+
+C:/msys64/mingw64/include/c++/10.3.0/ext/concurrence.h:
+
+C:/msys64/mingw64/include/c++/10.3.0/bits/stl_tree.h:
+
+C:/msys64/mingw64/include/c++/10.3.0/bits/shared_ptr.h:
+
+C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Text.hpp:
+
+C:/msys64/mingw64/include/c++/10.3.0/bits/allocated_ptr.h:
+
+C:/msys64/mingw64/include/c++/10.3.0/pstl/glue_memory_defs.h:
+
+C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Rect.hpp:
+
+C:/msys64/mingw64/include/c++/10.3.0/map:
+
+C:/msys64/mingw64/include/c++/10.3.0/set:
+
+C:/msys64/mingw64/include/c++/10.3.0/bits/stl_set.h:
+
+C:/msys64/mingw64/include/c++/10.3.0/bits/stl_list.h:
+
+C:/DEV/lib/Box2D/include/box2d/b2_draw.h:
+
+../src/EnTT/Entity.hpp:
+
+../src/EnTT/Handle.hpp:
+
+C:/DEV/lib/EnTT/src/entt/entity/handle.hpp:
+
+C:/DEV/lib/EnTT/src/entt/core/hashed_string.hpp:
 
 C:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/gthr-default.h:
 
@@ -935,118 +1057,24 @@ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/stdarg.h:
 
 C:/msys64/mingw64/x86_64-w64-mingw32/include/stdarg.h:
 
-C:/msys64/mingw64/include/c++/10.3.0/unordered_set:
+../src/SFML/Font.hpp:
 
 C:/msys64/mingw64/include/c++/10.3.0/string:
 
+C:/msys64/mingw64/include/c++/10.3.0/unordered_set:
+
 C:/DEV/lib/Box2D/include/box2d/b2_common.h:
 
-C:/msys64/mingw64/include/c++/10.3.0/algorithm:
+C:/msys64/mingw64/include/c++/10.3.0/bits/std_function.h:
 
-C:/msys64/mingw64/x86_64-w64-mingw32/include/assert.h:
+C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/float.h:
 
 C:/DEV/lib/Box2D/include/box2d/b2_collision.h:
 
 C:/DEV/lib/Box2D/include/box2d/b2_dynamic_tree.h:
-
-../src/SFML/Window.hpp:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/stl_iterator_base_types.h:
 
 C:/DEV/lib/Box2D/include/box2d/b2_growable_stack.h:
 
 C:/msys64/mingw64/x86_64-w64-mingw32/include/string.h:
-
-C:/msys64/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/cxxabi_init_exception.h:
-
-C:/DEV/lib/Box2D/include/box2d/b2_stack_allocator.h:
-
-C:/DEV/lib/Box2D/include/box2d/b2_time_step.h:
-
-C:/DEV/lib/Box2D/include/box2d/b2_shape.h:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/functional_hash.h:
-
-C:/DEV/lib/Box2D/include/box2d/b2_world_callbacks.h:
-
-../src/EnTT/Entity.hpp:
-
-C:/DEV/lib/Box2D/include/box2d/b2_draw.h:
-
-C:/msys64/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/locale_conv.h:
-
-C:/DEV/lib/SFML-2.5.1/include/SFML/System/Utf.hpp:
-
-../src/Box2D/Contact_Listener.hpp:
-
-C:/msys64/mingw64/include/c++/10.3.0/utility:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/stl_algo.h:
-
-C:/msys64/mingw64/include/c++/10.3.0/debug/debug.h:
-
-C:/msys64/mingw64/include/c++/10.3.0/math.h:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/uniform_int_dist.h:
-
-C:/msys64/mingw64/include/c++/10.3.0/array:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/refwrap.h:
-
-C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/float.h:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/std_function.h:
-
-C:/msys64/mingw64/include/c++/10.3.0/ext/aligned_buffer.h:
-
-C:/msys64/mingw64/include/c++/10.3.0/map:
-
-C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Rect.hpp:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/hashtable.h:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/enable_special_members.h:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/unordered_map.h:
-
-C:/DEV/lib/SFML-2.5.1/include/SFML/System/Utf.inl:
-
-C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Export.hpp:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/erase_if.h:
-
-C:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/time_members.h:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/locale_facets_nonio.tcc:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/locale_facets.h:
-
-C:/msys64/mingw64/include/c++/10.3.0/iterator:
-
-C:/msys64/mingw64/x86_64-w64-mingw32/include/crtdefs.h:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/stream_iterator.h:
-
-C:/DEV/lib/SFML-2.5.1/include/SFML/System/Vector2.hpp:
-
-C:/DEV/lib/SFML-2.5.1/include/SFML/System/Vector2.inl:
-
-C:/msys64/mingw64/include/c++/10.3.0/cerrno:
-
-C:/DEV/lib/SFML-2.5.1/include/SFML/System/Time.hpp:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/concept_check.h:
-
-C:/DEV/lib/SFML-2.5.1/include/SFML/Window/VideoMode.hpp:
-
-C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp:
-
-C:/DEV/lib/SFML-2.5.1/include/SFML/Window/WindowStyle.hpp:
-
-C:/DEV/lib/Box2D/include/box2d/b2_types.h:
-
-C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Color.hpp:

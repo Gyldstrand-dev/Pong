@@ -70,7 +70,7 @@ public:
 		body->ApplyTorque(torque, wake);
 	};
 	
-	const b2Body* get() const {
+	b2Body* get() {
 		return body;
 	};
 

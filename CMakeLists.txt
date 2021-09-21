@@ -5,7 +5,10 @@ set(SFML_DIR "C:/DEV/lib/SFML-2.5.1/build/GCC_10.3.0/32")
 find_package(SFML 2.5.1 COMPONENTS system window graphics audio network REQUIRED)
 
 
-add_executable(Pong main.cpp)
+add_executable(
+	Pong 
+	main.cpp
+)
 
 target_include_directories(
 	Pong 
@@ -19,7 +22,8 @@ target_include_directories(
 	Pong
 	PRIVATE
 		src
-		src/Game)
+		src/Game
+)
 
 target_compile_features(Pong PUBLIC cxx_std_17)
 target_compile_options(Pong PRIVATE -Wall -Wextra)

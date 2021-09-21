@@ -2,11 +2,12 @@
 
 
 struct User_Data {
+	
 	enum class Type {Player, Opponent, Ball, Border};
 	
-	Type type;
-	
-	User_Data(const Type& type) 
+	User_Data(const User_Data::Type& type) 
 	: 	type {type} {};
+	
+	User_Data::Type type;
 	
 };

@@ -1,9 +1,9 @@
 #include "Game.hpp"
 
-int main(int argc, char** args) {
+int main(int, char**) {
 	
-	(void)argc; (void)args;
 	Game().run();
+	
 	return 0;
 	
 };

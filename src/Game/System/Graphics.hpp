@@ -49,6 +49,7 @@ public:
 private:
 	
 	SFML::Transform transform;
+	
 };
 	
 	

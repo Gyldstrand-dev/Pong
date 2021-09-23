@@ -3,7 +3,6 @@
 #include <SFML/Window/Event.hpp>
 #include <SFML/Window/VideoMode.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
-#include <SFML/Graphics/View.hpp>
 
 
 namespace SFML {
@@ -18,7 +17,7 @@ public:
 	Window(Args&&... args)
 	:	sfml_window {std::forward <Args> (args)...} {
 		
-			sfml_window.setKeyRepeatEnabled(false);			
+			sfml_window.setKeyRepeatEnabled(false);
 	};
 	
 	Vector_2 <unsigned int> get_size() {
@@ -53,7 +52,6 @@ public:
 private:
 
 	sf::RenderWindow sfml_window;
-	sf::View view;
 	
 };
 	

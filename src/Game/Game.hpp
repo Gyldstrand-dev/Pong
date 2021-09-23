@@ -38,8 +38,6 @@ class Game {
 	Resource::Font::Cache font_cache;
 	State::Machine state_machine {ecs, event_dispatcher, font_cache, physics_system, window};
 	
-	
-	
 public:
 
 	Game() {
@@ -48,7 +46,6 @@ public:
 		physics_system.set_contact_listener(&collision_system);
 		physics_system.connect(ecs);
 		font_cache.load <Resource::Font::Loader> (EnTT::Hashed_String {"OpenSans-Regular.ttf"}, "OpenSans-Regular.ttf");
-		
 		event_dispatcher.enqueue <Event::Push_State> (std::make_unique <State::Intro> (state_machine));
 		
 	};
@@ -56,6 +53,7 @@ public:
 	void run() {
 		
 		while (window.is_open()) {
+			
 			time();
 			input();
 			before_physics();
@@ -63,6 +61,7 @@ public:
 			after_physics();
 			before_render();
 			render();
+			
 		};
 		
 	};
@@ -94,22 +93,26 @@ private:
 		while (window.poll_event(event)) {
 			
 			if (event.type == sf::Event::Closed) {
+				
 				window.close();
+				
 			};
 			
 			if (event.type == sf::Event::KeyPressed) {
-				std::cout << "key_press TRIGGER \n";
+				
 				event_dispatcher.trigger <Event::Key_Pressed> (event.key.code);
+				
 			};
 			
 			if (event.type == sf::Event::KeyReleased) {
-				//event_dispatcher.trigger <Event::Key_Released> (event.key.code);
+				
+				event_dispatcher.trigger <Event::Key_Released> (event.key.code);
+				
 			};
 					
 		};
 
 		event_dispatcher.update();
-		//std::cout << "dispatch UPDATE \n";
 	};	
 	
 	void before_physics() {};
@@ -134,15 +137,18 @@ private:
 	};
 	
 	void before_render() {
-		const double alpha = rollover_time / timestep;
-		(void) alpha;
+		
+		//const double alpha {rollover_time / timestep};
+		
 	};
 	
 	void render() {
+		
 		window.clear();
 		graphics_system.draw(ecs, window);
 		//physics_system.draw();
 		window.display();
+		
 	};
 	
 	

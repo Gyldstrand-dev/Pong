@@ -15,6 +15,8 @@ namespace State {
 	
 	
 class Pause : public State::Base {
+
+	EnTT::Handle pause_text;
 	
 public:
 
@@ -41,12 +43,8 @@ public:
 	
 	void update(const Time::Duration&, System::Physics&) override {};
 	
-	
-	
 private:
 	
-	EnTT::Handle pause_text;
-
 	void connect_event_listeners() {
 		
 		state_machine.event_dispatcher.sink <Event::Key_Pressed> ().connect <&State::Pause::on_key_pressed> (this);

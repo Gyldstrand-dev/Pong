@@ -16,6 +16,9 @@ namespace State {
 	
 class Machine {
 	
+	
+	std::vector <std::unique_ptr <State::Base>> states;
+	
 public:
 
 	EnTT::Registry& ecs;
@@ -75,7 +78,6 @@ private:
 		
 	};
 	
-	std::vector <std::unique_ptr <State::Base>> states;
 	
 };
 	

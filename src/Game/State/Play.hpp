@@ -31,12 +31,23 @@ namespace State {
 	
 class Play : public State::Base {
 	
+	EnTT::Handle 
+		player, 
+		opponent,
+		ball,
+		border,
+		scoreboard;
+		
+	User_Data 
+		player_user_data {User_Data::Type::Player},
+		opponent_user_data {User_Data::Type::Opponent},
+		ball_user_data {User_Data::Type::Ball},
+		border_user_data {User_Data::Type::Border};
+		
 public:
 
 	Play(State::Machine& state_machine)
-	:	Base {state_machine} {
-		
-	};
+	:	Base {state_machine} {};
 
 
 	void push() override {
@@ -70,18 +81,6 @@ public:
 	
 private:
 	
-	EnTT::Handle 
-		player, 
-		opponent,
-		ball,
-		border,
-		scoreboard;
-		
-	User_Data 
-		player_user_data {User_Data::Type::Player},
-		opponent_user_data {User_Data::Type::Opponent},
-		ball_user_data {User_Data::Type::Ball},
-		border_user_data {User_Data::Type::Border};
 
 	void connect_event_listeners() {
 		

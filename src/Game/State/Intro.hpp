@@ -7,6 +7,7 @@
 #include "Event/Key_Pressed.hpp"
 #include "Event/Push_State.hpp"
 #include "Event/Pop_State.hpp"
+#include <iostream>
 
 namespace State {
 	
@@ -18,22 +19,47 @@ public:
 
 	Intro(State::Machine& state_machine)
 	:	Base {state_machine} {};
+	
+	void push() override {};
+	
+	void pop() override {};
+	
+	void enter() override {
+		
+		connect_event_listeners();
+		create_entities();
+		
+	};
+	
+	void exit() override {
+		
+		disconnect_event_listeners();
+		destroy_entities();
+		
+	};
+	
+	void update(const Time::Duration&, System::Physics&) override {};
+	
+	
+private:
+	
+	EnTT::Handle intro_text;
 
-	void connect_event_listeners(EnTT::Event_Dispatcher& event_dispatcher) override {
+	void connect_event_listeners() {
 		
-		event_dispatcher.sink <Event::Key_Pressed> ().connect <&State::Intro::enter_main_menu> (this);
+		state_machine.event_dispatcher.sink <Event::Key_Pressed> ().connect <&State::Intro::on_key_pressed> (this);
 	
 	};
 	
-	void disconnect_event_listeners(EnTT::Event_Dispatcher& event_dispatcher) override {
+	void disconnect_event_listeners() {
 		
-		event_dispatcher.sink <Event::Key_Pressed> ().disconnect <&State::Intro::enter_main_menu> (this);
+		state_machine.event_dispatcher.sink <Event::Key_Pressed> ().disconnect <&State::Intro::on_key_pressed> (this);
 	
 	};
 	
-	void create_entities(EnTT::Registry& ecs) override {
+	void create_entities() {
 		
-		intro_text = {ecs, ecs.create()};
+		intro_text = {state_machine.ecs, state_machine.ecs.create()};
 		auto font = state_machine.font_cache.handle(EnTT::Hashed_String {"OpenSans-Regular.ttf"});
 		auto& drawable = intro_text.emplace <Component::Graphics::Drawable> (std::make_unique <sf::Text> ("INTRO", font, 100));
 		//reverse physics scale to avoid blurry text
@@ -41,29 +67,18 @@ public:
 	
 	};
 	
-	void destroy_entities(EnTT::Registry& ecs) override {
+	void destroy_entities() {
 		
-		(void) ecs;
 		intro_text.destroy();
 	
 	};
 	
-	void update(const Time::Duration& timestep) override {
+	void on_key_pressed(const Event::Key_Pressed&) {
 		
-		(void) timestep;
-		
-	};
-	
-	void enter_main_menu(const Event::Key_Pressed& event) {
-		
-		(void) event;
 		state_machine.event_dispatcher.enqueue <Event::Pop_State> ();
 		state_machine.event_dispatcher.enqueue <Event::Push_State> (std::make_unique <State::Main_Menu> (state_machine));
+		
 	};
-	
-private:
-	
-	EnTT::Handle intro_text;
 };
 	
 	

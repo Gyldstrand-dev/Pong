@@ -164,11 +164,6 @@ CMakeFiles/Pong.dir/main.cpp.obj: ../main.cpp \
   C:/msys64/mingw64/include/c++/10.3.0/tr1/poly_hermite.tcc \
   C:/msys64/mingw64/include/c++/10.3.0/tr1/poly_laguerre.tcc \
   C:/msys64/mingw64/include/c++/10.3.0/tr1/riemann_zeta.tcc \
-  ../src/Game/Event/Key_Pressed.hpp \
-  C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
-  C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Export.hpp \
-  C:/DEV/lib/SFML-2.5.1/include/SFML/Config.hpp \
-  ../src/Game/Event/Key_Released.hpp \
   ../src/EnTT/Registry.hpp \
   C:/DEV/lib/EnTT/single_include/entt/entt.hpp \
   C:/msys64/mingw64/include/c++/10.3.0/vector \
@@ -268,7 +263,9 @@ CMakeFiles/Pong.dir/main.cpp.obj: ../main.cpp \
   ../src/Box2D/Debug_Draw.hpp \
   ../src/SFML/Window.hpp \
   C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Event.hpp \
+  C:/DEV/lib/SFML-2.5.1/include/SFML/Config.hpp \
   C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+  C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Export.hpp \
   C:/DEV/lib/SFML-2.5.1/include/SFML/System/String.hpp \
   C:/DEV/lib/SFML-2.5.1/include/SFML/System/Export.hpp \
   C:/DEV/lib/SFML-2.5.1/include/SFML/System/Utf.hpp \
@@ -281,6 +278,7 @@ CMakeFiles/Pong.dir/main.cpp.obj: ../main.cpp \
   C:/msys64/mingw64/include/c++/10.3.0/bits/locale_conv.h \
   C:/DEV/lib/SFML-2.5.1/include/SFML/System/Utf.inl \
   C:/DEV/lib/SFML-2.5.1/include/SFML/System/String.inl \
+  C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
   C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Mouse.hpp \
   C:/DEV/lib/SFML-2.5.1/include/SFML/System/Vector2.hpp \
   C:/DEV/lib/SFML-2.5.1/include/SFML/System/Vector2.inl \
@@ -349,9 +347,11 @@ CMakeFiles/Pong.dir/main.cpp.obj: ../main.cpp \
   ../src/Game/State/Main_Menu.hpp \
   ../src/Game/State/Play.hpp \
   ../src/Game/State/End_Round.hpp \
-  ../src/Game/Event/Reset.hpp \
   ../src/Game/State/Begin_Round.hpp \
+  ../src/Game/State/Pause.hpp \
+  ../src/Game/Event/Key_Pressed.hpp \
   ../src/Game/Event/Launch_Ball.hpp \
+  ../src/Game/Event/Reset.hpp \
   ../src/Box2D/Shape.hpp \
   C:/DEV/lib/Box2D/include/box2d/b2_circle_shape.h \
   C:/DEV/lib/Box2D/include/box2d/b2_polygon_shape.h \
@@ -362,8 +362,11 @@ CMakeFiles/Pong.dir/main.cpp.obj: ../main.cpp \
   ../src/Box2D/Fixture_Builder.hpp \
   C:/DEV/lib/Box2D/include/box2d/b2_fixture.h \
   C:/DEV/lib/Box2D/include/box2d/b2_shape.h \
+  ../src/Game/Event/Key_Released.hpp \
   ../src/Game/Component/Score.hpp
 
+
+../src/Game/Event/Key_Released.hpp:
 
 C:/DEV/lib/Box2D/include/box2d/b2_chain_shape.h:
 
@@ -372,6 +375,8 @@ C:/DEV/lib/Box2D/include/box2d/b2_polygon_shape.h:
 ../src/Box2D/Shape.hpp:
 
 ../src/Game/Event/Launch_Ball.hpp:
+
+../src/Game/Event/Key_Pressed.hpp:
 
 ../src/Game/Component/Score.hpp:
 
@@ -459,6 +464,8 @@ C:/DEV/lib/SFML-2.5.1/include/SFML/System/Vector2.hpp:
 
 C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Mouse.hpp:
 
+C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Keyboard.hpp:
+
 C:/DEV/lib/SFML-2.5.1/include/SFML/System/String.inl:
 
 C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Export.hpp:
@@ -475,17 +482,15 @@ C:/msys64/mingw64/include/c++/10.3.0/locale:
 
 C:/DEV/lib/SFML-2.5.1/include/SFML/System/Utf.hpp:
 
+C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Export.hpp:
+
+C:/DEV/lib/SFML-2.5.1/include/SFML/Config.hpp:
+
 ../src/SFML/Window.hpp:
 
 ../src/Box2D/Debug_Draw.hpp:
 
 C:/DEV/lib/Box2D/include/box2d/b2_shape.h:
-
-C:/DEV/lib/Box2D/include/box2d/b2_body.h:
-
-C:/DEV/lib/Box2D/include/box2d/b2_time_step.h:
-
-C:/msys64/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/error_constants.h:
 
@@ -500,10 +505,6 @@ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/mm_malloc.h:
 C:/msys64/mingw64/include/c++/10.3.0/cstdint:
 
 C:/msys64/mingw64/include/c++/10.3.0/tr1/poly_hermite.tcc:
-
-C:/DEV/lib/Box2D/include/box2d/b2_world_callbacks.h:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/functional_hash.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/locale_facets_nonio.h:
 
@@ -529,6 +530,8 @@ C:/msys64/mingw64/include/c++/10.3.0/cstdio:
 
 C:/msys64/mingw64/x86_64-w64-mingw32/include/stdio.h:
 
+../src/Game/State/Pause.hpp:
+
 C:/msys64/mingw64/include/c++/10.3.0/bits/cxxabi_forced.h:
 
 ../src/SFML/Transform.hpp:
@@ -552,8 +555,6 @@ C:/msys64/mingw64/x86_64-w64-mingw32/include/wctype.h:
 ../src/EnTT/Hashed_String.hpp:
 
 C:/msys64/mingw64/x86_64-w64-mingw32/include/pthread_compat.h:
-
-C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Export.hpp:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/shared_ptr_base.h:
 
@@ -609,10 +610,6 @@ C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Event.hpp:
 
 C:/msys64/mingw64/x86_64-w64-mingw32/include/sec_api/wchar_s.h:
 
-C:/DEV/lib/Box2D/include/box2d/b2_stack_allocator.h:
-
-C:/msys64/mingw64/include/c++/10.3.0/bits/cxxabi_init_exception.h:
-
 C:/msys64/mingw64/x86_64-w64-mingw32/include/locale.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/stl_algobase.h:
@@ -666,6 +663,8 @@ C:/msys64/mingw64/include/c++/10.3.0/bits/stl_raw_storage_iter.h:
 C:/msys64/mingw64/include/c++/10.3.0/cwchar:
 
 C:/msys64/mingw64/x86_64-w64-mingw32/include/corecrt_stdio_config.h:
+
+C:/DEV/lib/Box2D/include/box2d/b2_body.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/iosfwd:
 
@@ -821,10 +820,6 @@ C:/msys64/mingw64/include/c++/10.3.0/bits/istream.tcc:
 
 C:/msys64/mingw64/include/c++/10.3.0/ext/type_traits.h:
 
-C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Keyboard.hpp:
-
-C:/DEV/lib/SFML-2.5.1/include/SFML/Config.hpp:
-
 C:/msys64/mingw64/include/c++/10.3.0/bits/ostream.tcc:
 
 C:/msys64/mingw64/include/c++/10.3.0/ratio:
@@ -941,10 +936,6 @@ C:/msys64/mingw64/include/c++/10.3.0/tr1/modified_bessel_func.tcc:
 
 C:/msys64/mingw64/include/c++/10.3.0/tr1/poly_laguerre.tcc:
 
-../src/Game/Event/Key_Pressed.hpp:
-
-../src/Game/Event/Key_Released.hpp:
-
 C:/DEV/lib/EnTT/single_include/entt/entt.hpp:
 
 C:/msys64/mingw64/include/c++/10.3.0/utility:
@@ -1029,6 +1020,8 @@ C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Rect.hpp:
 
 C:/msys64/mingw64/include/c++/10.3.0/map:
 
+C:/DEV/lib/Box2D/include/box2d/b2_time_step.h:
+
 C:/msys64/mingw64/include/c++/10.3.0/set:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/stl_set.h:
@@ -1078,3 +1071,13 @@ C:/msys64/mingw64/include/c++/10.3.0/bits/stl_iterator_base_types.h:
 C:/DEV/lib/Box2D/include/box2d/b2_growable_stack.h:
 
 C:/msys64/mingw64/x86_64-w64-mingw32/include/string.h:
+
+C:/msys64/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h:
+
+C:/msys64/mingw64/include/c++/10.3.0/bits/cxxabi_init_exception.h:
+
+C:/DEV/lib/Box2D/include/box2d/b2_stack_allocator.h:
+
+C:/msys64/mingw64/include/c++/10.3.0/bits/functional_hash.h:
+
+C:/DEV/lib/Box2D/include/box2d/b2_world_callbacks.h:

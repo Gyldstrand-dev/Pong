@@ -2,10 +2,11 @@
 #include "Time.hpp"
 #include "EnTT/Registry.hpp"
 #include "EnTT/Event_Dispatcher.hpp"
-#include "SFML/Window.hpp"
+#include "System/Physics.hpp"
 
 
 namespace State {
+	
 	
 	
 class Machine;
@@ -20,11 +21,11 @@ public:
 
 	
 	virtual ~Base() {};
-	virtual void connect_event_listeners(EnTT::Event_Dispatcher&) = 0;
-	virtual void disconnect_event_listeners(EnTT::Event_Dispatcher&) = 0;
-	virtual void create_entities(EnTT::Registry&) = 0;
-	virtual void destroy_entities(EnTT::Registry&) = 0;
-	virtual void update(const Time::Duration&) = 0;
+	virtual void push() = 0;
+	virtual void pop() = 0;
+	virtual void enter() = 0;
+	virtual void exit() = 0;
+	virtual void update(const Time::Duration&, System::Physics&) = 0;
 	
 protected:
 

@@ -107,7 +107,7 @@ CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 CMAKE_GNUtoMS:BOOL=OFF
 
 //Install path prefix, prepended onto install directories.
-CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/ShapeShooter
+CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/Pong
 
 //Path to a program.
 CMAKE_LINKER:FILEPATH=C:/msys64/mingw64/bin/ld.exe
@@ -244,15 +244,6 @@ Pong_SOURCE_DIR:STATIC=C:/DEV/projects/SFML/Pong
 
 //Path to a file.
 SFML_DOC_DIR:PATH=SFML_DOC_DIR-NOTFOUND
-
-//Value Computed by CMake
-ShapeShooter_BINARY_DIR:STATIC=C:/DEV/projects/SFML/Pong/build
-
-//Value Computed by CMake
-ShapeShooter_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-ShapeShooter_SOURCE_DIR:STATIC=C:/DEV/projects/SFML/Pong
 
 
 ########################

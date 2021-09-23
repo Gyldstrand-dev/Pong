@@ -20,20 +20,38 @@ public:
 	Main_Menu(State::Machine& state_machine)
 	:	Base {state_machine} {};
 
-	void connect_event_listeners(EnTT::Event_Dispatcher& event_dispatcher) override {
+	void push() override {};
+	
+	void pop() override {};
+	
+	void enter() override {
 		
-		event_dispatcher.sink <Event::Key_Pressed> ().connect <&State::Main_Menu::enter_play> (this);
+		connect_event_listeners();
+		create_entities();
+		
+	};
+	
+	void exit() override {
+		
+		disconnect_event_listeners();
+		destroy_entities();
+		
+	};
+
+	void connect_event_listeners() {
+		
+		state_machine.event_dispatcher.sink <Event::Key_Pressed> ().connect <&State::Main_Menu::on_key_pressed> (this);
 	
 	};
 	
-	void disconnect_event_listeners(EnTT::Event_Dispatcher& event_dispatcher) override {
+	void disconnect_event_listeners() {
 		
-		event_dispatcher.sink <Event::Key_Pressed> ().disconnect <&State::Main_Menu::enter_play> (this);
+		state_machine.event_dispatcher.sink <Event::Key_Pressed> ().disconnect <&State::Main_Menu::on_key_pressed> (this);
 	};
 	
-	void create_entities(EnTT::Registry& ecs) override {
+	void create_entities() {
 		
-		intro_text = {ecs, ecs.create()};
+		intro_text = {state_machine.ecs, state_machine.ecs.create()};
 		auto font = state_machine.font_cache.handle(EnTT::Hashed_String {"OpenSans-Regular.ttf"});
 		auto& drawable = intro_text.emplace <Component::Graphics::Drawable> (std::make_unique <sf::Text> ("MENU", font, 100));
 		//reverse physics scale to avoid blurry text
@@ -41,26 +59,19 @@ public:
 	
 	};
 	
-	void destroy_entities(EnTT::Registry& ecs) override {
+	void destroy_entities() {
 		
-		(void) ecs;
 		intro_text.destroy();
 	
 	};
 	
-	void update(const Time::Duration& timestep) override {
-		
-		(void) timestep;
+	void update(const Time::Duration&, System::Physics&) {};
 	
-	};
-	
-	void enter_play(const Event::Key_Pressed& event) {
+	void on_key_pressed(const Event::Key_Pressed&) {
 		
-		(void) event;
 		state_machine.event_dispatcher.enqueue <Event::Pop_State> ();
 		state_machine.event_dispatcher.enqueue <Event::Push_State> (std::make_unique <State::Play> (state_machine));
-		state_machine.event_dispatcher.enqueue <Event::Push_State> (std::make_unique <State::Begin_Round> (state_machine));
-	
+		
 	};
 	
 private:

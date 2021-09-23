@@ -1,8 +1,6 @@
 #pragma once
 #include "Time.hpp"
 #include "Vector_2.hpp"
-#include "Event/Key_Pressed.hpp"
-#include "Event/Key_Released.hpp"
 #include "EnTT/Registry.hpp"
 #include "EnTT/Entity.hpp"
 #include "EnTT/Handle.hpp"
@@ -18,6 +16,8 @@
 #include "Resource/Font/Cache.hpp"
 #include "State/Machine.hpp"
 #include "State/Intro.hpp"
+#include "Event/Key_Pressed.hpp"
+#include "Event/Key_Released.hpp"
 #include "Event/Push_State.hpp"
 #include "Event/Pop_State.hpp"
 
@@ -37,6 +37,7 @@ class Game {
 	Box2D::Debug_Draw debug_draw {physics_system, window};
 	Resource::Font::Cache font_cache;
 	State::Machine state_machine {ecs, event_dispatcher, font_cache, physics_system, window};
+	
 	
 	
 public:
@@ -88,7 +89,6 @@ private:
 	
 	void input() {		
 		
-		event_dispatcher.update();
 		
 		sf::Event event;
 		while (window.poll_event(event)) {
@@ -98,16 +98,18 @@ private:
 			};
 			
 			if (event.type == sf::Event::KeyPressed) {
+				std::cout << "key_press TRIGGER \n";
 				event_dispatcher.trigger <Event::Key_Pressed> (event.key.code);
 			};
 			
 			if (event.type == sf::Event::KeyReleased) {
-				event_dispatcher.trigger <Event::Key_Released> (event.key.code);
+				//event_dispatcher.trigger <Event::Key_Released> (event.key.code);
 			};
 					
 		};
 
-		
+		event_dispatcher.update();
+		//std::cout << "dispatch UPDATE \n";
 	};	
 	
 	void before_physics() {};
@@ -118,9 +120,9 @@ private:
 			
 			run_time += timestep;
 			rollover_time -= timestep;
-			physics_system.update(timestep);
-			physics_system.clear_forces();
-			state_machine.update_states(timestep);
+			//physics_system.update(timestep);
+			//physics_system.clear_forces();
+			state_machine.update_state(timestep, physics_system);
 			
 		};
 	};

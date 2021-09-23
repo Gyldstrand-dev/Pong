@@ -1,7 +1,9 @@
 #pragma once
 #include "State/Base.hpp"
+#include "State/Machine.hpp"
 #include "State/End_Round.hpp"
 #include "State/Begin_Round.hpp"
+#include "State/Pause.hpp"
 #include "EnTT/Registry.hpp"
 #include "EnTT/Handle.hpp"
 #include "SFML/Window.hpp"
@@ -16,6 +18,7 @@
 #include "Event/Key_Released.hpp"
 #include "Event/Scored.hpp"
 #include "Event/Reset.hpp"
+#include "Event/Launch_Ball.hpp"
 #include "User_Data.hpp"
 #include "Vector_2.hpp"
 #include "Component/Score.hpp"
@@ -35,65 +38,33 @@ public:
 		
 	};
 
-	void connect_event_listeners(EnTT::Event_Dispatcher& event_dispatcher) override {
-		
-		event_dispatcher.sink <Event::Key_Pressed> ().connect <&State::Play::on_key_pressed> (this);
-		event_dispatcher.sink <Event::Scored> ().connect <&State::Play::on_scored> (this);
-		event_dispatcher.sink <Event::Reset> ().connect <&State::Play::on_reset> (this);
-		event_dispatcher.sink <Event::Launch_Ball> ().connect <&State::Play::on_launch_ball> (this);
-	
-	};
-	
-	void disconnect_event_listeners(EnTT::Event_Dispatcher& event_dispatcher) override {
-		
-		event_dispatcher.sink <Event::Key_Pressed> ().disconnect <&State::Play::on_key_pressed> (this);
-		event_dispatcher.sink <Event::Scored> ().disconnect <&State::Play::on_scored> (this);
-		event_dispatcher.sink <Event::Reset> ().disconnect <&State::Play::on_reset> (this);
-		event_dispatcher.sink <Event::Launch_Ball> ().disconnect <&State::Play::on_launch_ball> (this);
-	
-	};
-	
-	void create_entities(EnTT::Registry& ecs) override {
-		
-		create_player(ecs);
-		create_opponent(ecs);
-		create_ball(ecs);
-		create_border(ecs);
-		create_scoreboard(ecs);
-		
-	};
-	
-	void destroy_entities(EnTT::Registry& ecs) override {
 
-		(void) ecs;
-		player.destroy();
-		opponent.destroy();
-		ball.destroy();
-		border.destroy();
-		scoreboard.destroy();
+	void push() override {
+		
+		create_entities();
+		state_machine.event_dispatcher.enqueue <Event::Push_State> (std::make_unique <State::Begin_Round> (state_machine, player, ball));
 		
 	};
 	
-	void update(const Time::Duration& timestep) override {
+	void pop() override {
 		
-		(void) timestep;
+		destroy_entities();
+		
 	};
 	
-	void on_key_pressed(const Event::Key_Pressed& event) {
+	void enter() override {
 		
-		auto& body = player.get <Component::Physics::Body> ();
+		connect_event_listeners();
+	};
+	
+	void exit() override {
 		
-		if (event.key == sf::Keyboard::W) {
-			
-			body.set_linear_velocity({0.f, -10.f});
-			
-		};
+		disconnect_event_listeners();
+	};
+	
+	void update(const Time::Duration& timestep, System::Physics& physics_system) override {
 		
-		if (event.key == sf::Keyboard::S) {
-			
-			body.set_linear_velocity({0.f, 10.f});
-		
-		};
+		physics_system.update(timestep);
 		
 	};
 	
@@ -111,10 +82,90 @@ private:
 		opponent_user_data {User_Data::Type::Opponent},
 		ball_user_data {User_Data::Type::Ball},
 		border_user_data {User_Data::Type::Border};
-		
-	void create_player(EnTT::Registry& ecs) {
 
-		player = {ecs, ecs.create()};
+	void connect_event_listeners() {
+		
+		state_machine.event_dispatcher.sink <Event::Key_Pressed> ().connect <&State::Play::on_key_pressed> (this);
+		state_machine.event_dispatcher.sink <Event::Scored> ().connect <&State::Play::on_scored> (this);
+		
+	};
+	
+	void disconnect_event_listeners() {
+		
+		state_machine.event_dispatcher.sink <Event::Key_Pressed> ().disconnect <&State::Play::on_key_pressed> (this);
+		state_machine.event_dispatcher.sink <Event::Scored> ().disconnect <&State::Play::on_scored> (this);
+		
+	};
+	
+	void on_key_pressed(const Event::Key_Pressed& event) {
+		
+		
+		if (event.key == sf::Keyboard::Escape) {
+			
+			state_machine.event_dispatcher.enqueue <Event::Push_State> (std::make_unique <State::Pause> (state_machine));
+				
+		};
+		
+		if (event.key == sf::Keyboard::W) {
+			
+			auto& body = player.get <Component::Physics::Body> ();
+			body.set_linear_velocity({0.f, -10.f});
+			
+		};
+		
+		if (event.key == sf::Keyboard::S) {
+			
+			auto& body = player.get <Component::Physics::Body> ();
+			body.set_linear_velocity({0.f, 10.f});
+		
+		};
+		
+	};
+	
+	void on_scored(const Event::Scored& event) {
+		
+		auto& score = scoreboard.get <Component::Score> ();
+		
+		if (event.type == User_Data::Type::Player) {
+			
+			score.player++;
+		
+		};
+		
+		if (event.type == User_Data::Type::Opponent) {
+			
+			score.opponent++;
+		
+		};
+		
+		auto& text = static_cast <sf::Text&> (*scoreboard.get <Component::Graphics::Drawable> ().pointer);
+		text.setString(std::to_string(score.player) + " | " + std::to_string(score.opponent));
+		state_machine.event_dispatcher.enqueue <Event::Push_State> (std::make_unique <State::End_Round> (state_machine, player, opponent, ball, scoreboard));
+	};
+	
+	void create_entities() {
+		
+		create_player();
+		create_opponent();
+		create_ball();
+		create_border();
+		create_scoreboard();
+		
+	};
+	
+	void destroy_entities() {
+
+		player.destroy();
+		opponent.destroy();
+		ball.destroy();
+		border.destroy();
+		scoreboard.destroy();
+		
+	};
+	
+	void create_player() {
+
+		player = {state_machine.ecs, state_machine.ecs.create()};
 		auto window_size = state_machine.window.get_size();
 		auto& body = player.emplace <Component::Physics::Body> (state_machine.physics_system.create_body(Box2D::Body_Builder{}
 			.set_type(Box2D::Body::Type::Kinematic)
@@ -137,9 +188,9 @@ private:
 		
 	};
 	
-	void create_opponent(EnTT::Registry& ecs) {
+	void create_opponent() {
 
-		opponent = {ecs, ecs.create()};
+		opponent = {state_machine.ecs, state_machine.ecs.create()};
 		auto window_size = state_machine.window.get_size();
 		auto& body = opponent.emplace <Component::Physics::Body> (state_machine.physics_system.create_body(Box2D::Body_Builder{}
 			.set_type(Box2D::Body::Type::Kinematic)
@@ -163,9 +214,9 @@ private:
 	
 	};
 	
-	void create_ball(EnTT::Registry& ecs) {
+	void create_ball() {
 		
-		ball = {ecs, ecs.create()};
+		ball = {state_machine.ecs, state_machine.ecs.create()};
 		auto window_size = state_machine.window.get_size();
 		auto& body = ball.emplace <Component::Physics::Body> (state_machine.physics_system.create_body(Box2D::Body_Builder{}
 			.set_type(Box2D::Body::Type::Dynamic)
@@ -183,9 +234,9 @@ private:
 	
 	};
 	
-	void create_border(EnTT::Registry& ecs) {
+	void create_border() {
 		
-		border = {ecs, ecs.create()};
+		border = {state_machine.ecs, state_machine.ecs.create()};
 		auto& body = border.emplace <Component::Physics::Body> (state_machine.physics_system.create_body(Box2D::Body_Builder{}
 			.set_type(Box2D::Body::Type::Static)
 			.build()));		
@@ -202,9 +253,9 @@ private:
 	
 	};
 		
-	void create_scoreboard(EnTT::Registry& ecs) {
+	void create_scoreboard() {
 		
-		scoreboard = {ecs, ecs.create()};
+		scoreboard = {state_machine.ecs, state_machine.ecs.create()};
 		scoreboard.emplace <Component::Score> ();
 		auto font = state_machine.font_cache.handle(EnTT::Hashed_String {"OpenSans-Regular.ttf"});
 		auto& drawable = scoreboard.emplace <Component::Graphics::Drawable> (std::make_unique <sf::Text> ("0 | 0", font, 100));
@@ -218,63 +269,7 @@ private:
 		drawable.transform.set_scale({1.f / System::Physics::scale, 1.f / System::Physics::scale});
 	
 	};
- 	
-	void on_launch_ball(const Event::Launch_Ball& event) {
 		
-		(void) event;
-		auto& ball_body = ball.get <Component::Physics::Body> ();
-		ball_body.set_linear_velocity({10.f, 0.f});
-	
-	};
-		
-	void on_scored(const Event::Scored& event) {
-		
-		auto& player_body = player.get <Component::Physics::Body> ();
-		player_body.set_linear_velocity({0.f, 0.f});
-		auto& opponent_body = opponent.get <Component::Physics::Body> ();
-		opponent_body.set_linear_velocity({0.f, 0.f});
-		auto& ball_body = ball.get <Component::Physics::Body> ();
-		ball_body.set_linear_velocity({0.f, 0.f});
-		auto& score = scoreboard.get <Component::Score> ();
-		auto& text = static_cast <sf::Text&> (*scoreboard.get <Component::Graphics::Drawable> ().pointer);
-		
-		if (event.type == User_Data::Type::Player) {
-			
-			score.player++;
-		
-		};
-		
-		if (event.type == User_Data::Type::Opponent) {
-			
-			score.opponent++;
-		
-		};
-		
-		text.setString(std::to_string(score.player) + " | " + std::to_string(score.opponent));
-		state_machine.event_dispatcher.sink <Event::Key_Pressed> ().disconnect <&State::Play::on_key_pressed> (this);
-		state_machine.event_dispatcher.enqueue <Event::Push_State> (std::make_unique <State::End_Round> (state_machine, text));
-	};
-	
-	void on_reset(const Event::Reset& event) {
-		
-		(void) event;
-		auto window_size = state_machine.window.get_size();
-		auto& player_body = player.get <Component::Physics::Body> ();
-		auto& opponent_body = opponent.get <Component::Physics::Body> ();
-		auto& ball_body = ball.get <Component::Physics::Body> ();
-		player_body.set_transform({1.f, window_size.y / System::Physics::scale / 2.f});
-		player_body.set_linear_velocity({0.f, 0.f});
-		opponent_body.set_transform({window_size.x / System::Physics::scale - 1.f, window_size.y / System::Physics::scale / 2.f}, opponent_body.get_angle());
-		opponent_body.set_linear_velocity({0.f, 0.f});
-		ball_body.set_transform({window_size.x / System::Physics::scale / 2.f, window_size.y / System::Physics::scale / 2.f});
-		ball_body.set_linear_velocity({0.f, 0.f});
-		ball_body.set_angular_velocity(0.f);
-		auto& scoreboard_text = static_cast <sf::Text&> (*scoreboard.get <Component::Graphics::Drawable> ().pointer);
-		scoreboard_text.setFillColor({255, 255, 255, 0});
-		state_machine.event_dispatcher.sink <Event::Key_Pressed> ().connect <&State::Play::on_key_pressed> (this);
-		state_machine.event_dispatcher.enqueue <Event::Push_State> (std::make_unique <State::Begin_Round> (state_machine));
-	
-	};
 };
 	
 	

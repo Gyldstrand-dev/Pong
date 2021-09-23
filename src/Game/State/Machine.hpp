@@ -7,6 +7,7 @@
 #include "Event/Push_State.hpp"
 #include "Event/Pop_State.hpp"
 #include <vector>
+#include <iostream>
 
 
 namespace State {
@@ -17,49 +18,56 @@ class Machine {
 	
 public:
 
-	//These are not the droids you are looking for...
 	EnTT::Registry& ecs;
 	EnTT::Event_Dispatcher& event_dispatcher;
 	Resource::Font::Cache& font_cache;
 	System::Physics& physics_system;
 	SFML::Window& window;
-	//...
 
 	Machine(EnTT::Registry& ecs, EnTT::Event_Dispatcher& event_dispatcher, Resource::Font::Cache& font_cache, System::Physics& physics_system, SFML::Window& window) 
 	:	ecs {ecs}, event_dispatcher {event_dispatcher}, font_cache {font_cache}, physics_system {physics_system}, window {window} {
 
 			event_dispatcher.sink <Event::Push_State> ().connect <&State::Machine::push_state> (this);
 			event_dispatcher.sink <Event::Pop_State> ().connect <&State::Machine::pop_state> (this);
-	
 	};
 	
 	void push_state(Event::Push_State& event) {
 		
-		states.push_back(std::move(event.state));
-		states.back()->create_entities(ecs);
-		states.back()->connect_event_listeners(event_dispatcher);
-		
-	};
-	
-	void pop_state(const Event::Pop_State& event) {
-		
-		(void) event;
 		if (!states.empty()) {
 			
-			states.back()->disconnect_event_listeners(event_dispatcher);
-			states.back()->destroy_entities(ecs);
+			states.back()->exit();
+			
+		};
+		
+		states.push_back(std::move(event.state));
+		states.back()->push();
+		states.back()->enter();
+	};
+	
+	void pop_state(const Event::Pop_State&) {
+		
+		if (!states.empty()) {
+			
+			states.back()->exit();
+			states.back()->pop();
 			states.pop_back();
+			
+			if (!states.empty()) {
+			
+				states.back()->enter();
+				
+			};
 			
 		};
 		
 	};
 	
-	void update_states(const Time::Duration& timestep) {
+	void update_state(const Time::Duration& timestep, System::Physics& physics_system) {
 		
-		for (auto& state : states) {
+		if (!states.empty()) {
 			
-			state->update(timestep);
-		
+			states.back()->update(timestep, physics_system);
+			
 		};
 		
 	};

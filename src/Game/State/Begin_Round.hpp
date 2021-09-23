@@ -2,11 +2,14 @@
 #include "Time.hpp"
 #include "State/Base.hpp"
 #include "State/Play.hpp"
+#include "State/Pause.hpp"
 #include "EnTT/Registry.hpp"
 #include "EnTT/Handle.hpp"
 #include "System/Physics.hpp"
 #include "Event/Push_State.hpp"
 #include "Event/Pop_State.hpp"
+#include "Event/Key_Pressed.hpp"
+#include "EnTT/Handle.hpp"
 #include "Event/Launch_Ball.hpp"
 #include <string>
 #include <iostream>
@@ -19,40 +22,42 @@ class Begin_Round : public State::Base {
 	
 public:
 
-	Begin_Round(State::Machine& state_machine)
-	:	Base {state_machine} {};
+	Begin_Round(State::Machine& state_machine, EnTT::Handle player, EnTT::Handle ball)
+	:	Base {state_machine}, player {player}, ball {ball} {};
 
-	void connect_event_listeners(EnTT::Event_Dispatcher& event_dispatcher) override {
+	void push() override {
 		
-		(void) event_dispatcher;
-		
-	};
-	
-	void disconnect_event_listeners(EnTT::Event_Dispatcher& event_dispatcher) override {
-		
-		(void) event_dispatcher;
+		create_entities();
 		
 	};
 	
-	void create_entities(EnTT::Registry& ecs) override {
-	
-		create_countdown(ecs);
+	void pop() override {
+		
+		destroy_entities();
 		
 	};
 	
-	void destroy_entities(EnTT::Registry& ecs) override {
+	void enter() override {
 		
-		(void) ecs;
-		countdown.destroy();
+		connect_event_listeners();
 		
 	};
 	
-	void update(const Time::Duration& timestep) override {
+	void exit() override {
+		
+		disconnect_event_listeners();
+		
+	};
+	
+	void update(const Time::Duration& timestep, System::Physics& physics_system) override {
+		
+		physics_system.update(timestep);
+		physics_system.clear_forces();
 		
 		if (!countdown_counter) {
 			
-			state_machine.event_dispatcher.enqueue <Event::Pop_State> ();			
-			state_machine.event_dispatcher.enqueue <Event::Launch_Ball> ();			
+			state_machine.event_dispatcher.enqueue <Event::Launch_Ball> ();	
+			state_machine.event_dispatcher.enqueue <Event::Pop_State> ();	
 			
 		} else {
 			
@@ -68,14 +73,80 @@ public:
 					text.setString(std::to_string(countdown_counter));
 					
 				};
+				
 			};
+			
+		};
+		
+	};
+
+private:
+
+	int countdown_counter {3};
+	Time::Duration duration {0.0s};
+	EnTT::Handle countdown, player, ball;
+	
+	void connect_event_listeners() {
+		
+		state_machine.event_dispatcher.sink <Event::Key_Pressed> ().connect <&State::Begin_Round::on_key_pressed> (this);
+		state_machine.event_dispatcher.sink <Event::Launch_Ball> ().connect <&State::Begin_Round::on_launch_ball> (this);
+		
+	};
+	
+	void disconnect_event_listeners() {
+		
+		state_machine.event_dispatcher.sink <Event::Key_Pressed> ().disconnect <&State::Begin_Round::on_key_pressed> (this);
+		state_machine.event_dispatcher.sink <Event::Launch_Ball> ().disconnect <&State::Begin_Round::on_launch_ball> (this);
+		
+	};
+	
+	void on_key_pressed(const Event::Key_Pressed& event) {
+		
+		if (event.key == sf::Keyboard::Escape) {
+			
+			state_machine.event_dispatcher.enqueue <Event::Push_State> (std::make_unique <State::Pause> (state_machine));
+			
+		};
+		
+		
+		if (event.key == sf::Keyboard::W) {
+			
+			auto& body = player.get <Component::Physics::Body> ();
+			body.set_linear_velocity({0.f, -10.f});
+			
+		};
+		
+		if (event.key == sf::Keyboard::S) {
+			
+			auto& body = player.get <Component::Physics::Body> ();
+			body.set_linear_velocity({0.f, 10.f});
+		
 		};
 		
 	};
 	
-	void create_countdown(EnTT::Registry& ecs) {
+	void on_launch_ball(const Event::Launch_Ball&) {
 		
-		countdown = {ecs, ecs.create()};
+		auto& ball_body = ball.get <Component::Physics::Body> ();
+		ball_body.set_linear_velocity({10.f, 0.f});
+	
+	};
+	
+	void create_entities() {
+	
+		create_countdown();
+		
+	};
+	
+	void destroy_entities() {
+		
+		countdown.destroy();
+		
+	};
+	
+	void create_countdown() {
+		
+		countdown = {state_machine.ecs, state_machine.ecs.create()};
 		auto font = state_machine.font_cache.handle(EnTT::Hashed_String {"OpenSans-Regular.ttf"});
 		auto& drawable = countdown.emplace <Component::Graphics::Drawable> (std::make_unique <sf::Text> ("3", font, 100));
 		auto& text = static_cast <sf::Text&> (*drawable.pointer);
@@ -87,13 +158,6 @@ public:
 		//reverse physics scale to avoid blurry text
 		drawable.transform.set_scale({1.f / System::Physics::scale, 1.f / System::Physics::scale});
 	};
-
-	
-private:
-
-	int countdown_counter {3};
-	EnTT::Handle countdown;
-	Time::Duration duration {0.0s};
 	
 };
 	

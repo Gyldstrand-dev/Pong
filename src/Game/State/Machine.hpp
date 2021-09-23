@@ -29,7 +29,20 @@ public:
 
 			event_dispatcher.sink <Event::Push_State> ().connect <&State::Machine::push_state> (this);
 			event_dispatcher.sink <Event::Pop_State> ().connect <&State::Machine::pop_state> (this);
+	
 	};
+	
+	void update_state(const Time::Duration& timestep, System::Physics& physics_system) {
+		
+		if (!states.empty()) {
+			
+			states.back()->update(timestep, physics_system);
+			
+		};
+		
+	};
+
+private:
 	
 	void push_state(Event::Push_State& event) {
 		
@@ -61,18 +74,6 @@ public:
 		};
 		
 	};
-	
-	void update_state(const Time::Duration& timestep, System::Physics& physics_system) {
-		
-		if (!states.empty()) {
-			
-			states.back()->update(timestep, physics_system);
-			
-		};
-		
-	};
-
-private:
 	
 	std::vector <std::unique_ptr <State::Base>> states;
 	

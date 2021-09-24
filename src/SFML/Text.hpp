@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics/Text.hpp>
+#include <string>
 
 
 namespace SFML {

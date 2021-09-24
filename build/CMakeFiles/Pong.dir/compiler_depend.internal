@@ -333,15 +333,24 @@ CMakeFiles/Pong.dir/main.cpp.obj
  C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Font.hpp
  C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Glyph.hpp
  C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Texture.hpp
+ C:/DEV/projects/SFML/Pong/src/Game/Component/UI/Button.hpp
+ C:/DEV/projects/SFML/Pong/src/SFML/Font.hpp
+ C:/DEV/projects/SFML/Pong/src/SFML/Color.hpp
  C:/DEV/projects/SFML/Pong/src/Game/Resource/Font/Loader.hpp
  C:/DEV/projects/SFML/Pong/src/EnTT/Resource_Loader.hpp
  C:/DEV/lib/EnTT/src/entt/resource/loader.hpp
- C:/DEV/projects/SFML/Pong/src/SFML/Font.hpp
  C:/DEV/projects/SFML/Pong/src/Game/Resource/Font/Cache.hpp
  C:/DEV/projects/SFML/Pong/src/EnTT/Resource_Cache.hpp
  C:/DEV/lib/EnTT/src/entt/resource/cache.hpp
  C:/DEV/projects/SFML/Pong/src/Game/State/Machine.hpp
  C:/DEV/projects/SFML/Pong/src/Game/State/Base.hpp
+ C:/DEV/projects/SFML/Pong/src/Game/System/User_Interface.hpp
+ C:/DEV/projects/SFML/Pong/src/Game/Event/Mouse_Pressed_Left.hpp
+ C:/DEV/projects/SFML/Pong/src/Game/Event/Mouse_Moved.hpp
+ C:/DEV/projects/SFML/Pong/src/SFML/Button.hpp
+ C:/DEV/projects/SFML/Pong/src/SFML/Drawable.hpp
+ C:/DEV/projects/SFML/Pong/src/SFML/Rectangle.hpp
+ C:/DEV/projects/SFML/Pong/src/SFML/Text.hpp
  C:/DEV/projects/SFML/Pong/src/Game/Event/Push_State.hpp
  C:/DEV/projects/SFML/Pong/src/Game/Event/Pop_State.hpp
  C:/DEV/projects/SFML/Pong/src/Game/State/Intro.hpp
@@ -365,4 +374,7 @@ CMakeFiles/Pong.dir/main.cpp.obj
  C:/DEV/lib/Box2D/include/box2d/b2_shape.h
  C:/DEV/projects/SFML/Pong/src/Game/Event/Key_Released.hpp
  C:/DEV/projects/SFML/Pong/src/Game/Component/Score.hpp
+ C:/DEV/projects/SFML/Pong/src/Game/State/Options.hpp
+ C:/DEV/projects/SFML/Pong/src/Game/State/Options_Resolution.hpp
+ C:/DEV/projects/SFML/Pong/src/Game/Event/Exit.hpp
 

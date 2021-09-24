@@ -332,15 +332,24 @@ CMakeFiles/Pong.dir/main.cpp.obj: ../main.cpp \
   C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Font.hpp \
   C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
   C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+  ../src/Game/Component/UI/Button.hpp \
+  ../src/SFML/Font.hpp \
+  ../src/SFML/Color.hpp \
   ../src/Game/Resource/Font/Loader.hpp \
   ../src/EnTT/Resource_Loader.hpp \
   C:/DEV/lib/EnTT/src/entt/resource/loader.hpp \
-  ../src/SFML/Font.hpp \
   ../src/Game/Resource/Font/Cache.hpp \
   ../src/EnTT/Resource_Cache.hpp \
   C:/DEV/lib/EnTT/src/entt/resource/cache.hpp \
   ../src/Game/State/Machine.hpp \
   ../src/Game/State/Base.hpp \
+  ../src/Game/System/User_Interface.hpp \
+  ../src/Game/Event/Mouse_Pressed_Left.hpp \
+  ../src/Game/Event/Mouse_Moved.hpp \
+  ../src/SFML/Button.hpp \
+  ../src/SFML/Drawable.hpp \
+  ../src/SFML/Rectangle.hpp \
+  ../src/SFML/Text.hpp \
   ../src/Game/Event/Push_State.hpp \
   ../src/Game/Event/Pop_State.hpp \
   ../src/Game/State/Intro.hpp \
@@ -363,8 +372,13 @@ CMakeFiles/Pong.dir/main.cpp.obj: ../main.cpp \
   C:/DEV/lib/Box2D/include/box2d/b2_fixture.h \
   C:/DEV/lib/Box2D/include/box2d/b2_shape.h \
   ../src/Game/Event/Key_Released.hpp \
-  ../src/Game/Component/Score.hpp
+  ../src/Game/Component/Score.hpp \
+  ../src/Game/State/Options.hpp \
+  ../src/Game/State/Options_Resolution.hpp \
+  ../src/Game/Event/Exit.hpp
 
+
+../src/Game/State/Options.hpp:
 
 ../src/Game/Event/Key_Released.hpp:
 
@@ -388,6 +402,14 @@ C:/DEV/lib/Box2D/include/box2d/b2_polygon_shape.h:
 
 ../src/Game/Event/Push_State.hpp:
 
+../src/SFML/Text.hpp:
+
+../src/SFML/Rectangle.hpp:
+
+../src/SFML/Drawable.hpp:
+
+../src/Game/System/User_Interface.hpp:
+
 ../src/Game/State/Machine.hpp:
 
 ../src/EnTT/Resource_Cache.hpp:
@@ -397,6 +419,12 @@ C:/DEV/lib/Box2D/include/box2d/b2_polygon_shape.h:
 C:/DEV/lib/EnTT/src/entt/resource/loader.hpp:
 
 ../src/Game/Resource/Font/Loader.hpp:
+
+../src/Game/Event/Mouse_Pressed_Left.hpp:
+
+../src/SFML/Color.hpp:
+
+../src/Game/Component/UI/Button.hpp:
 
 C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Texture.hpp:
 
@@ -471,6 +499,8 @@ C:/DEV/lib/SFML-2.5.1/include/SFML/System/String.inl:
 C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Export.hpp:
 
 C:/DEV/lib/SFML-2.5.1/include/SFML/System/Utf.inl:
+
+../src/SFML/Button.hpp:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/locale_facets_nonio.tcc:
 
@@ -642,6 +672,8 @@ C:/msys64/mingw64/include/c++/10.3.0/system_error:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/basic_string.h:
 
+../src/Game/State/Options_Resolution.hpp:
+
 C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Vertex.hpp:
 
 C:/msys64/mingw64/x86_64-w64-mingw32/include/stdint.h:
@@ -687,6 +719,8 @@ C:/msys64/mingw64/include/c++/10.3.0/exception:
 C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Joystick.hpp:
 
 C:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/cpu_defines.h:
+
+../src/Game/Event/Mouse_Moved.hpp:
 
 C:/msys64/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h:
 
@@ -829,6 +863,8 @@ C:/msys64/mingw64/include/c++/10.3.0/debug/assertions.h:
 C:/msys64/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/stl_iterator.h:
+
+../src/Game/Event/Exit.hpp:
 
 C:/msys64/mingw64/x86_64-w64-mingw32/include/process.h:
 

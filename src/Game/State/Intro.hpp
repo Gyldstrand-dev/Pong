@@ -1,13 +1,17 @@
 #pragma once
+#include "Vector_2.hpp"
 #include "State/Base.hpp"
 #include "State/Main_Menu.hpp"
 #include "EnTT/Registry.hpp"
 #include "EnTT/Handle.hpp"
 #include "System/Physics.hpp"
+#include "Component/UI/Button.hpp"
 #include "Event/Key_Pressed.hpp"
 #include "Event/Push_State.hpp"
 #include "Event/Pop_State.hpp"
+#include <string>
 #include <iostream>
+
 
 namespace State {
 	
@@ -15,6 +19,8 @@ namespace State {
 	
 class Intro : public State::Base {
 	
+	EnTT::Handle intro;
+
 public:
 
 	Intro(State::Machine& state_machine)
@@ -43,7 +49,6 @@ public:
 	
 private:
 	
-	EnTT::Handle intro_text;
 
 	void connect_event_listeners() {
 		
@@ -59,17 +64,19 @@ private:
 	
 	void create_entities() {
 		
-		intro_text = {state_machine.ecs, state_machine.ecs.create()};
+		intro = {state_machine.ecs, state_machine.ecs.create()};
 		auto font = state_machine.font_cache.handle(EnTT::Hashed_String {"OpenSans-Regular.ttf"});
-		auto& drawable = intro_text.emplace <Component::Graphics::Drawable> (std::make_unique <sf::Text> ("INTRO", font, 100));
+		auto& drawable = intro.emplace <Component::Graphics::Drawable> (std::make_unique <sf::Text> ("INTRO", font, 100));
 		//reverse physics scale to avoid blurry text
 		drawable.transform.set_scale({1.f / System::Physics::scale, 1.f / System::Physics::scale});
+	 
 	
+	 
 	};
 	
 	void destroy_entities() {
 		
-		intro_text.destroy();
+		intro.destroy();
 	
 	};
 	

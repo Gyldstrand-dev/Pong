@@ -20,6 +20,12 @@ public:
 			sfml_window.setKeyRepeatEnabled(false);
 	};
 	
+	template <typename... Args>
+	void create(Args&&... args) {
+
+		sfml_window.create(std::forward <Args> (args)...);
+	};
+	
 	Vector_2 <unsigned int> get_size() {
 		return sfml_window.getSize();
 	};	
@@ -47,6 +53,11 @@ public:
 	
 	void close() {
 		sfml_window.close();
+	};
+	
+	Vector_2 <float> map_pixel_to_coords(const Vector_2 <float>& pixel) {
+		auto coords = sfml_window.mapPixelToCoords({pixel.x, pixel.y});
+		return {coords.x * 1.f, coords.y * 1.f};
 	};
 
 private:

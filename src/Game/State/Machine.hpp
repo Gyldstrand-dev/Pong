@@ -3,6 +3,7 @@
 #include "EnTT/Registry.hpp"
 #include "EnTT/Event_Dispatcher.hpp"
 #include "System/Physics.hpp"
+#include "System/User_Interface.hpp"
 #include "Resource/Font/Cache.hpp"
 #include "Event/Push_State.hpp"
 #include "Event/Pop_State.hpp"

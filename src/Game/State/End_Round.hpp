@@ -19,6 +19,9 @@ namespace State {
 	
 class End_Round : public State::Base {
 	
+	EnTT::Handle player, opponent, ball, scoreboard;
+	Time::Duration duration {3.0s}, current_duration {0.0s};
+	
 public:
 
 	End_Round(State::Machine& state_machine, EnTT::Handle player, EnTT::Handle opponent, EnTT::Handle ball, EnTT::Handle scoreboard)
@@ -68,9 +71,6 @@ public:
 
 	
 private:
-	
-	EnTT::Handle player, opponent, ball, scoreboard;
-	Time::Duration duration {3.0s}, current_duration {0.0s};
 
 	void connect_event_listeners() {
 		

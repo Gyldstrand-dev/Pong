@@ -48,6 +48,7 @@ public:
 private:
 
 	EnTT::Event_Dispatcher& event_dispatcher;
+	
 };
 
 

@@ -5,6 +5,7 @@
 #include "SFML/Transform.hpp"
 #include "Component/Graphics/Drawable.hpp"
 #include "Component/Physics/Body.hpp"
+#include "Component/UI/Button.hpp"
 
 
 namespace System {
@@ -13,6 +14,7 @@ namespace System {
 	
 class Graphics {
 	
+	SFML::Transform transform;
 	
 public:
 
@@ -36,19 +38,23 @@ public:
 
 	void draw(EnTT::Registry& ecs, SFML::Window& window) {
 		
-		auto view = ecs.view <Component::Graphics::Drawable> ();
+		auto view = ecs.view <Component::Graphics::Drawable> (entt::exclude <Component::UI::Button>);
 		for (auto entity : view) {
 			
 			auto& drawable = view.get <Component::Graphics::Drawable> (entity);
 			window.draw(*drawable.pointer, transform.get() * drawable.transform.get());
 		
+		};	
+		
+		auto ui_view = ecs.view <Component::UI::Button> ();
+		for (auto entity : ui_view) {
+			
+			auto& drawable = ecs.get <Component::Graphics::Drawable> (entity);
+			window.draw(*drawable.pointer, drawable.transform.get());
+		
 		};
 		
 	};
-
-private:
-	
-	SFML::Transform transform;
 	
 };
 	

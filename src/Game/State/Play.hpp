@@ -31,12 +31,7 @@ namespace State {
 	
 class Play : public State::Base {
 	
-	EnTT::Handle 
-		player, 
-		opponent,
-		ball,
-		border,
-		scoreboard;
+	EnTT::Handle player, opponent, ball, border, scoreboard;
 		
 	User_Data 
 		player_user_data {User_Data::Type::Player},

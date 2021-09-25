@@ -12,7 +12,11 @@
 
 namespace State {
 	
+	
+	
 class Options;
+	
+	
 	
 class Options_Resolution : public State::Base {
 	
@@ -42,13 +46,8 @@ public:
 	void update(const Time::Duration&, System::Physics&) {};
 
 private:
-
-	void connect_event_listeners() {};
-	
-	void disconnect_event_listeners() {};
 	
 	void create_entities() {
-		
 		
 		auto window_size = state_machine.window.get_size();
 		auto& resolutions = sf::VideoMode::getFullscreenModes();
@@ -76,8 +75,6 @@ private:
 				},
 				[i = i, &state_machine = state_machine, this] () {
 					state_machine.window.create(sf::VideoMode::getFullscreenModes().at(i), "Window");
-					state_machine.event_dispatcher.enqueue <Event::Pop_State> ();
-					state_machine.event_dispatcher.enqueue <Event::Push_State> (std::make_unique <State::Options> (state_machine));
 				}
 			);
 			
@@ -105,13 +102,14 @@ private:
 			}
 		);
 		
-		
 	};
 	
 	void destroy_entities() {
 		
 		for (auto& button : buttons) {
+			
 			button.destroy();
+			
 		};
 		
 		buttons.clear();

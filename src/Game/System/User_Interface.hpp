@@ -91,7 +91,6 @@ private:
 		auto& button = ecs.get <Component::UI::Button> (active_button);
 		auto& drawable = static_cast <SFML::Button&> (*ecs.get <Component::Graphics::Drawable> (active_button).pointer);
 		if (drawable.contains(event.position)) {
-			std::cout << "!!!!! \n";
 			if (button.on_mouse_pressed_left) button.on_mouse_pressed_left();
 		};
 		

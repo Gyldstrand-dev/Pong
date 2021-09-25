@@ -65,18 +65,16 @@ private:
 	SFML::Text text;
 
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const override {
-		target.draw(rect);
-		target.draw(text);
+		target.draw(rect, states);
+		target.draw(text, states);
 		
 	};
 	
 	void center_text() {
 		
 		auto bounds = text.getLocalBounds();
-		auto size = rect.getSize();
 		text.setOrigin(bounds.width / 2.f, bounds.height / 2.f);
 		text.setPosition(rect.getPosition());
-		//text.move(size.x / 2.f, size.y / 2.5f);
 		
 	};
 };

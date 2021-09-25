@@ -10,8 +10,8 @@
 
 
 namespace State {
-	
-class Main_Menu;
+
+
 	
 class Options : public State::Base {
 	
@@ -22,38 +22,27 @@ public:
 	Options(State::Machine& state_machine)
 	:	Base {state_machine} {};
 
-	void push() override {
-		
-		create_entities();
-
-	};
+	void push() override {};
 	
-	void pop() override {
-	
-		destroy_entities();
-	
-	};
+	void pop() override {};
 		
 	void enter() override {
-
+		
+		create_entities();
 		
 	};
 	
 	void exit() override {
-
+		
+		destroy_entities();
 		
 	};
 	
 	void update(const Time::Duration&, System::Physics&) {};
 
 private:
-
-	void connect_event_listeners() {};
-	
-	void disconnect_event_listeners() {};
 	
 	void create_entities() {
-		
 		
 		auto window_size = state_machine.window.get_size();
 		
@@ -75,7 +64,7 @@ private:
 				button.set_color({255, 255, 255, 255});
 			},
 			[&state_machine = state_machine] () {
-				state_machine.event_dispatcher.enqueue <Event::Pop_State> ();
+				//state_machine.event_dispatcher.enqueue <Event::Pop_State> ();
 				state_machine.event_dispatcher.enqueue <Event::Push_State> (std::make_unique <State::Options_Resolution> (state_machine));
 			}
 		);
@@ -133,7 +122,6 @@ private:
 		exit_button.destroy();
 	
 	};
-	
 	
 };
 	

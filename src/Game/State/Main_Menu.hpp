@@ -44,10 +44,6 @@ public:
 	void update(const Time::Duration&, System::Physics&) {};
 
 private:
-
-	void connect_event_listeners() {};
-	
-	void disconnect_event_listeners() {};
 	
 	void create_entities() {
 		

@@ -131,7 +131,7 @@ private:
 			
 			if (event.type == SFML::Event::MouseMoved) {
 				
-				event_dispatcher.trigger <Event::Mouse_Moved> (Vector_2 <float> {event.mouseMove.x * 1.f, event.mouseMove.y * 1.f});
+				event_dispatcher.trigger <Event::Mouse_Moved> (window.map_pixel(Vector_2 <int> {event.mouseMove.x, event.mouseMove.y}));
 				
 			};
 			
@@ -139,7 +139,7 @@ private:
 				
 				if (event.mouseButton.button == sf::Mouse::Left) {
 					
-					event_dispatcher.trigger <Event::Mouse_Pressed_Left> (Vector_2 <float> {event.mouseButton.x * 1.f, event.mouseButton.y * 1.f});
+					event_dispatcher.trigger <Event::Mouse_Pressed_Left> (window.map_pixel(Vector_2 <int> {event.mouseButton.x, event.mouseButton.y}));
 				
 				};
 			

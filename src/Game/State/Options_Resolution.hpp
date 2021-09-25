@@ -29,14 +29,12 @@ public:
 	
 	void enter() override {
 		
-		connect_event_listeners();
 		create_entities();
 		
 	};
 	
 	void exit() override {
 		
-		disconnect_event_listeners();
 		destroy_entities();
 		
 	};
@@ -55,6 +53,8 @@ private:
 		auto window_size = state_machine.window.get_size();
 		auto& resolutions = sf::VideoMode::getFullscreenModes();
 		buttons.resize(resolutions.size() + 1);
+		buttons.shrink_to_fit();
+		
 		for (size_t i {0}; i < resolutions.size(); i++) {
 					
 			buttons.at(i) = {state_machine.ecs, state_machine.ecs.create()};
@@ -62,7 +62,7 @@ private:
 				Vector_2 <float> {window_size.x / 2.f, (window_size.y - (buttons.size() * 32.f)) / 2.f + i * 32.f},
 				Vector_2 <float> {100.f, 30.f},
 				std::to_string(resolutions[i].width) + " x " + std::to_string(resolutions[i].height),
-				state_machine.font_cache.handle(EnTT::Hashed_String {"OpenSans-Regular.ttf"}),
+				state_machine.font_cache.handle(EnTT::Hashed_String {"Raleway-Regular.ttf"}),
 				std::uint8_t {12},
 				SFML::Color {255, 255, 255, 255},
 				SFML::Color {0, 0, 0, 255},
@@ -77,7 +77,7 @@ private:
 				[i = i, &state_machine = state_machine, this] () {
 					state_machine.window.create(sf::VideoMode::getFullscreenModes().at(i), "Window");
 					state_machine.event_dispatcher.enqueue <Event::Pop_State> ();
-					state_machine.event_dispatcher.enqueue <Event::Push_State> (std::make_unique <State::Options_Resolution> (state_machine));
+					state_machine.event_dispatcher.enqueue <Event::Push_State> (std::make_unique <State::Options> (state_machine));
 				}
 			);
 			
@@ -88,7 +88,7 @@ private:
 			Vector_2 <float> {window_size.x / 2.f, (window_size.y - (buttons.size() * 32.f)) / 2.f + buttons.size() * 32.f},
 			Vector_2 <float> {100.f, 30.f},
 			std::string {"Back"},
-			state_machine.font_cache.handle(EnTT::Hashed_String {"OpenSans-Regular.ttf"}),
+			state_machine.font_cache.handle(EnTT::Hashed_String {"Raleway-Regular.ttf"}),
 			std::uint8_t {12},
 			SFML::Color {255, 255, 255, 255},
 			SFML::Color {0, 0, 0, 255},
@@ -102,7 +102,6 @@ private:
 			},
 			[&state_machine = state_machine] () {
 				state_machine.event_dispatcher.enqueue <Event::Pop_State> ();
-				state_machine.event_dispatcher.enqueue <Event::Push_State> (std::make_unique <State::Options> (state_machine));
 			}
 		);
 		
@@ -114,10 +113,10 @@ private:
 		for (auto& button : buttons) {
 			button.destroy();
 		};
+		
 		buttons.clear();
 	
 	};
-	
 	
 };
 	

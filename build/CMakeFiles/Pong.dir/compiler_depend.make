@@ -262,6 +262,7 @@ CMakeFiles/Pong.dir/main.cpp.obj: ../main.cpp \
   C:/DEV/lib/Box2D/include/box2d/b2_draw.h \
   ../src/Box2D/Debug_Draw.hpp \
   ../src/SFML/Window.hpp \
+  ../src/SFML/Event.hpp \
   C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Event.hpp \
   C:/DEV/lib/SFML-2.5.1/include/SFML/Config.hpp \
   C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Joystick.hpp \
@@ -286,7 +287,6 @@ CMakeFiles/Pong.dir/main.cpp.obj: ../main.cpp \
   C:/DEV/lib/SFML-2.5.1/include/SFML/System/Vector3.hpp \
   C:/DEV/lib/SFML-2.5.1/include/SFML/System/Vector3.inl \
   C:/DEV/lib/SFML-2.5.1/include/SFML/System/Time.hpp \
-  C:/DEV/lib/SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
   C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
   C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Export.hpp \
   C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
@@ -305,6 +305,7 @@ CMakeFiles/Pong.dir/main.cpp.obj: ../main.cpp \
   C:/DEV/lib/SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
   C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Cursor.hpp \
   C:/DEV/lib/SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+  C:/DEV/lib/SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
   C:/DEV/lib/SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
   C:/DEV/lib/SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
   C:/DEV/lib/SFML-2.5.1/include/SFML/System/Clock.hpp \
@@ -346,6 +347,7 @@ CMakeFiles/Pong.dir/main.cpp.obj: ../main.cpp \
   ../src/Game/System/User_Interface.hpp \
   ../src/Game/Event/Mouse_Pressed_Left.hpp \
   ../src/Game/Event/Mouse_Moved.hpp \
+  ../src/Game/Event/Window_Recreate.hpp \
   ../src/SFML/Button.hpp \
   ../src/SFML/Drawable.hpp \
   ../src/SFML/Rectangle.hpp \
@@ -359,6 +361,9 @@ CMakeFiles/Pong.dir/main.cpp.obj: ../main.cpp \
   ../src/Game/State/Begin_Round.hpp \
   ../src/Game/State/Pause.hpp \
   ../src/Game/Event/Key_Pressed.hpp \
+  ../src/Game/State/Options.hpp \
+  ../src/Game/State/Options_Resolution.hpp \
+  ../src/Game/Event/Exit.hpp \
   ../src/Game/Event/Launch_Ball.hpp \
   ../src/Game/Event/Reset.hpp \
   ../src/Box2D/Shape.hpp \
@@ -372,13 +377,8 @@ CMakeFiles/Pong.dir/main.cpp.obj: ../main.cpp \
   C:/DEV/lib/Box2D/include/box2d/b2_fixture.h \
   C:/DEV/lib/Box2D/include/box2d/b2_shape.h \
   ../src/Game/Event/Key_Released.hpp \
-  ../src/Game/Component/Score.hpp \
-  ../src/Game/State/Options.hpp \
-  ../src/Game/State/Options_Resolution.hpp \
-  ../src/Game/Event/Exit.hpp
+  ../src/Game/Component/Score.hpp
 
-
-../src/Game/State/Options.hpp:
 
 ../src/Game/Event/Key_Released.hpp:
 
@@ -389,6 +389,8 @@ C:/DEV/lib/Box2D/include/box2d/b2_polygon_shape.h:
 ../src/Box2D/Shape.hpp:
 
 ../src/Game/Event/Launch_Ball.hpp:
+
+../src/Game/State/Options.hpp:
 
 ../src/Game/Event/Key_Pressed.hpp:
 
@@ -569,6 +571,8 @@ C:/msys64/mingw64/include/c++/10.3.0/bits/cxxabi_forced.h:
 C:/msys64/mingw64/include/c++/10.3.0/bits/locale_classes.h:
 
 C:/msys64/mingw64/x86_64-w64-mingw32/include/ctype.h:
+
+../src/SFML/Event.hpp:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/std_abs.h:
 
@@ -837,6 +841,8 @@ C:/DEV/lib/Box2D/include/box2d/b2_types.h:
 ../src/EnTT/Resource_Loader.hpp:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/memoryfwd.h:
+
+../src/Game/Event/Window_Recreate.hpp:
 
 C:/msys64/mingw64/include/c++/10.3.0/streambuf:
 

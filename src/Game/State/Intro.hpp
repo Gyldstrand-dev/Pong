@@ -65,7 +65,7 @@ private:
 	void create_entities() {
 		
 		intro = {state_machine.ecs, state_machine.ecs.create()};
-		auto font = state_machine.font_cache.handle(EnTT::Hashed_String {"OpenSans-Regular.ttf"});
+		auto font = state_machine.font_cache.handle(EnTT::Hashed_String {"Raleway-Regular.ttf"});
 		auto& drawable = intro.emplace <Component::Graphics::Drawable> (std::make_unique <sf::Text> ("INTRO", font, 100));
 		//reverse physics scale to avoid blurry text
 		drawable.transform.set_scale({1.f / System::Physics::scale, 1.f / System::Physics::scale});

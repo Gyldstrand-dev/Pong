@@ -23,6 +23,7 @@
 #include "Event/Mouse_Moved.hpp"
 #include "Event/Mouse_Pressed_Left.hpp"
 #include "Event/Exit.hpp"
+#include "Event/Window_Recreate.hpp"
 
 #include <iostream>
 
@@ -44,8 +45,10 @@ class Game {
 	
 public:
 
-	void close(const Event::Exit& event) {
+	void close(const Event::Exit&) {
+		
 		window.close();
+		
 	};
 
 	Game() {
@@ -54,6 +57,8 @@ public:
 		physics_system.set_contact_listener(&collision_system);
 		physics_system.connect(ecs);
 		font_cache.load <Resource::Font::Loader> (EnTT::Hashed_String {"OpenSans-Regular.ttf"}, "OpenSans-Regular.ttf");
+		font_cache.load <Resource::Font::Loader> (EnTT::Hashed_String {"Pirulen-Regular.ttf"}, "Pirulen-Regular.ttf");
+		font_cache.load <Resource::Font::Loader> (EnTT::Hashed_String {"Raleway-Regular.ttf"}, "Raleway-Regular.ttf");
 		event_dispatcher.sink <Event::Exit> ().connect <&Game::close> (this);
 		event_dispatcher.enqueue <Event::Push_State> (std::make_unique <State::Intro> (state_machine));
 		
@@ -99,41 +104,43 @@ private:
 	void input() {		
 		
 		
-		sf::Event event;
+		SFML::Event event;
 		while (window.poll_event(event)) {
 			
-			if (event.type == sf::Event::Closed) {
+			if (event.type == SFML::Event::Closed) {
 				
 				event_dispatcher.trigger <Event::Exit> ();
 				
 			};
 			
-			if (event.type == sf::Event::Resized) {
-				std::cout << "RESIZED \n";
+			if (event.type == SFML::Event::Resized) {
+				
 			};
 			
-			if (event.type == sf::Event::KeyPressed) {
+			if (event.type == SFML::Event::KeyPressed) {
 				
 				event_dispatcher.trigger <Event::Key_Pressed> (event.key.code);
 				
 			};
 			
-			if (event.type == sf::Event::KeyReleased) {
+			if (event.type == SFML::Event::KeyReleased) {
 				
 				event_dispatcher.trigger <Event::Key_Released> (event.key.code);
 				
 			};	
 			
-			if (event.type == sf::Event::MouseMoved) {
+			if (event.type == SFML::Event::MouseMoved) {
 				
-				event_dispatcher.trigger <Event::Mouse_Moved> (Vector_2 <float> {event.mouseMove.x, event.mouseMove.y});
+				event_dispatcher.trigger <Event::Mouse_Moved> (Vector_2 <float> {event.mouseMove.x * 1.f, event.mouseMove.y * 1.f});
 				
 			};
 			
-			if (event.type == sf::Event::MouseButtonPressed) {
+			if (event.type == SFML::Event::MouseButtonPressed) {
 				
 				if (event.mouseButton.button == sf::Mouse::Left) {
-					event_dispatcher.trigger <Event::Mouse_Pressed_Left> (Vector_2 <float> {event.mouseButton.x, event.mouseButton.y});
+					
+					event_dispatcher.trigger <Event::Mouse_Pressed_Left> (Vector_2 <float> {event.mouseButton.x * 1.f, event.mouseButton.y * 1.f});
+				
 				};
 			
 			};

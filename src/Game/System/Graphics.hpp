@@ -50,7 +50,9 @@ public:
 		for (auto entity : ui_view) {
 			
 			auto& drawable = ecs.get <Component::Graphics::Drawable> (entity);
+			window.set_view();
 			window.draw(*drawable.pointer, drawable.transform.get());
+			window.set_default_view();
 		
 		};
 		

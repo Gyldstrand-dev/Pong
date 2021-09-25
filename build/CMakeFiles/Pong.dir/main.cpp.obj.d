@@ -259,6 +259,7 @@ CMakeFiles/Pong.dir/main.cpp.obj: C:\DEV\projects\SFML\Pong\main.cpp \
  C:/DEV/lib/Box2D/include/box2d/b2_draw.h \
  C:/DEV/projects/SFML/Pong/src/Box2D/Debug_Draw.hpp \
  C:/DEV/projects/SFML/Pong/src/SFML/Window.hpp \
+ C:/DEV/projects/SFML/Pong/src/SFML/Event.hpp \
  C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Event.hpp \
  C:/DEV/lib/SFML-2.5.1/include/SFML/Config.hpp \
  C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Joystick.hpp \
@@ -283,7 +284,6 @@ CMakeFiles/Pong.dir/main.cpp.obj: C:\DEV\projects\SFML\Pong\main.cpp \
  C:/DEV/lib/SFML-2.5.1/include/SFML/System/Vector3.hpp \
  C:/DEV/lib/SFML-2.5.1/include/SFML/System/Vector3.inl \
  C:/DEV/lib/SFML-2.5.1/include/SFML/System/Time.hpp \
- C:/DEV/lib/SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
  C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
  C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Export.hpp \
  C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
@@ -302,6 +302,7 @@ CMakeFiles/Pong.dir/main.cpp.obj: C:\DEV\projects\SFML\Pong\main.cpp \
  C:/DEV/lib/SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
  C:/DEV/lib/SFML-2.5.1/include/SFML/Window/Cursor.hpp \
  C:/DEV/lib/SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+ C:/DEV/lib/SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
  C:/DEV/lib/SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
  C:/DEV/lib/SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
  C:/DEV/lib/SFML-2.5.1/include/SFML/System/Clock.hpp \
@@ -343,6 +344,7 @@ CMakeFiles/Pong.dir/main.cpp.obj: C:\DEV\projects\SFML\Pong\main.cpp \
  C:/DEV/projects/SFML/Pong/src/Game/System/User_Interface.hpp \
  C:/DEV/projects/SFML/Pong/src/Game/Event/Mouse_Pressed_Left.hpp \
  C:/DEV/projects/SFML/Pong/src/Game/Event/Mouse_Moved.hpp \
+ C:/DEV/projects/SFML/Pong/src/Game/Event/Window_Recreate.hpp \
  C:/DEV/projects/SFML/Pong/src/SFML/Button.hpp \
  C:/DEV/projects/SFML/Pong/src/SFML/Drawable.hpp \
  C:/DEV/projects/SFML/Pong/src/SFML/Rectangle.hpp \
@@ -356,6 +358,9 @@ CMakeFiles/Pong.dir/main.cpp.obj: C:\DEV\projects\SFML\Pong\main.cpp \
  C:/DEV/projects/SFML/Pong/src/Game/State/Begin_Round.hpp \
  C:/DEV/projects/SFML/Pong/src/Game/State/Pause.hpp \
  C:/DEV/projects/SFML/Pong/src/Game/Event/Key_Pressed.hpp \
+ C:/DEV/projects/SFML/Pong/src/Game/State/Options.hpp \
+ C:/DEV/projects/SFML/Pong/src/Game/State/Options_Resolution.hpp \
+ C:/DEV/projects/SFML/Pong/src/Game/Event/Exit.hpp \
  C:/DEV/projects/SFML/Pong/src/Game/Event/Launch_Ball.hpp \
  C:/DEV/projects/SFML/Pong/src/Game/Event/Reset.hpp \
  C:/DEV/projects/SFML/Pong/src/Box2D/Shape.hpp \
@@ -369,7 +374,4 @@ CMakeFiles/Pong.dir/main.cpp.obj: C:\DEV\projects\SFML\Pong\main.cpp \
  C:/DEV/lib/Box2D/include/box2d/b2_fixture.h \
  C:/DEV/lib/Box2D/include/box2d/b2_shape.h \
  C:/DEV/projects/SFML/Pong/src/Game/Event/Key_Released.hpp \
- C:/DEV/projects/SFML/Pong/src/Game/Component/Score.hpp \
- C:/DEV/projects/SFML/Pong/src/Game/State/Options.hpp \
- C:/DEV/projects/SFML/Pong/src/Game/State/Options_Resolution.hpp \
- C:/DEV/projects/SFML/Pong/src/Game/Event/Exit.hpp
+ C:/DEV/projects/SFML/Pong/src/Game/Component/Score.hpp

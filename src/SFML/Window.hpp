@@ -1,8 +1,8 @@
 #pragma once
 #include "Vector_2.hpp"
-#include <SFML/Window/Event.hpp>
-#include <SFML/Window/VideoMode.hpp>
+#include "SFML/Event.hpp"
 #include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/Graphics/View.hpp>
 
 
 namespace SFML {
@@ -18,12 +18,16 @@ public:
 	:	sfml_window {std::forward <Args> (args)...} {
 		
 			sfml_window.setKeyRepeatEnabled(false);
+			view = sfml_window.getDefaultView();
+			default_view = sfml_window.getDefaultView();
 	};
 	
 	template <typename... Args>
 	void create(Args&&... args) {
 
 		sfml_window.create(std::forward <Args> (args)...);
+		sfml_window.setKeyRepeatEnabled(false);
+		view = sfml_window.getDefaultView();
 	};
 	
 	Vector_2 <unsigned int> get_size() {
@@ -53,15 +57,25 @@ public:
 	
 	void close() {
 		sfml_window.close();
+	}; 
+	
+	void set_view() {
+		sfml_window.setView(view);
 	};
 	
-	Vector_2 <float> map_pixel_to_coords(const Vector_2 <float>& pixel) {
-		auto coords = sfml_window.mapPixelToCoords({pixel.x, pixel.y});
-		return {coords.x * 1.f, coords.y * 1.f};
+	void set_default_view() {
+		sfml_window.setView(default_view);
+		
 	};
+	
+	Vector_2 <float> map_pixel(const Vector_2 <int>& coord) {
+		return sfml_window.mapPixelToCoords(sf::Vector2i {coord.x, coord.y}, view);
+	};
+
 
 private:
 
+	sf::View view, default_view;
 	sf::RenderWindow sfml_window;
 	
 };

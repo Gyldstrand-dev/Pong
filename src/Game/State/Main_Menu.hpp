@@ -31,14 +31,12 @@ public:
 	
 	void enter() override {
 		
-		connect_event_listeners();
 		create_entities();
 		
 	};
 	
 	void exit() override {
 		
-		disconnect_event_listeners();
 		destroy_entities();
 		
 	};
@@ -58,21 +56,21 @@ private:
 		play_button = {state_machine.ecs, state_machine.ecs.create()};
 		play_button.emplace <Component::UI::Button> ( 
 			Vector_2 <float> {window_size.x / 2.f, window_size.y / 2.f - 150.f},
-			Vector_2 <float> {100.f, 60.f},
+			Vector_2 <float> {100.f, 30.f},
 			std::string {"Play"},
 			state_machine.font_cache.handle(EnTT::Hashed_String {"OpenSans-Regular.ttf"}),
 			std::uint8_t {15},
 			SFML::Color {255, 255, 255, 255},
 			SFML::Color {0, 0, 0, 255},
-			[&] () {
+			[&play_button = play_button] () {
 				auto& button = static_cast <SFML::Button&> (*play_button.get <Component::Graphics::Drawable> ().pointer);
 				button.set_color({200, 200, 200, 255});
 			},
-			[&] () {
+			[&play_button = play_button] () {
 				auto& button = static_cast <SFML::Button&> (*play_button.get <Component::Graphics::Drawable> ().pointer);
 				button.set_color({255, 255, 255, 255});
 			},
-			[&] () {
+			[&state_machine = state_machine] () {
 				state_machine.event_dispatcher.enqueue <Event::Pop_State> ();
 				state_machine.event_dispatcher.enqueue <Event::Push_State> (std::make_unique <State::Play> (state_machine));
 			}
@@ -81,22 +79,22 @@ private:
 		options_button = {state_machine.ecs, state_machine.ecs.create()};
 		options_button.emplace <Component::UI::Button> ( 
 			Vector_2 <float> {window_size.x / 2.f, window_size.y / 2.f},
-			Vector_2 <float> {100.f, 60.f},
+			Vector_2 <float> {100.f, 30.f},
 			std::string {"Options"},
-			state_machine.font_cache.handle(EnTT::Hashed_String {"OpenSans-Regular.ttf"}),
+			state_machine.font_cache.handle(EnTT::Hashed_String {"Raleway-Regular.ttf"}),
 			std::uint8_t {15},
 			SFML::Color {255, 255, 255, 255},
 			SFML::Color {0, 0, 0, 255},
-			[&] () {
+			[&options_button = options_button] () {
 				auto& button = static_cast <SFML::Button&> (*options_button.get <Component::Graphics::Drawable> ().pointer);
 				button.set_color({200, 200, 200, 255});
 			},
-			[&] () {
+			[&options_button = options_button] () {
 				auto& button = static_cast <SFML::Button&> (*options_button.get <Component::Graphics::Drawable> ().pointer);
 				button.set_color({255, 255, 255, 255});
 			},
-			[&] () {
-				state_machine.event_dispatcher.enqueue <Event::Pop_State> ();
+			[&state_machine = state_machine] () {
+				//state_machine.event_dispatcher.enqueue <Event::Pop_State> ();
 				state_machine.event_dispatcher.enqueue <Event::Push_State> (std::make_unique <State::Options> (state_machine));
 			}
 		);
@@ -104,21 +102,21 @@ private:
 		exit_button = {state_machine.ecs, state_machine.ecs.create()};
 		exit_button.emplace <Component::UI::Button> ( 
 			Vector_2 <float> {window_size.x / 2.f, window_size.y / 2.f + 150.f},
-			Vector_2 <float> {100.f, 60.f},
+			Vector_2 <float> {100.f, 30.f},
 			std::string {"Exit"},
-			state_machine.font_cache.handle(EnTT::Hashed_String {"OpenSans-Regular.ttf"}),
+			state_machine.font_cache.handle(EnTT::Hashed_String {"Raleway-Regular.ttf"}),
 			std::uint8_t {15},
 			SFML::Color {255, 255, 255, 255},
 			SFML::Color {0, 0, 0, 255},
-			[&] () {
+			[&exit_button = exit_button] () {
 				auto& button = static_cast <SFML::Button&> (*exit_button.get <Component::Graphics::Drawable> ().pointer);
 				button.set_color({200, 200, 200, 255});
 			},
-			[&] () {
+			[&exit_button = exit_button] () {
 				auto& button = static_cast <SFML::Button&> (*exit_button.get <Component::Graphics::Drawable> ().pointer);
 				button.set_color({255, 255, 255, 255});
 			},
-			[&] () {
+			[&state_machine = state_machine] () {
 				state_machine.event_dispatcher.trigger <Event::Exit> ();
 			}
 		);

@@ -3,6 +3,7 @@
 #include "State/Base.hpp"
 #include "State/Play.hpp"
 #include "State/Pause.hpp"
+#include "State/Options.hpp"
 #include "EnTT/Registry.hpp"
 #include "EnTT/Handle.hpp"
 #include "System/Physics.hpp"
@@ -104,7 +105,7 @@ private:
 		
 		if (event.key == sf::Keyboard::Escape) {
 			
-			state_machine.event_dispatcher.enqueue <Event::Push_State> (std::make_unique <State::Pause> (state_machine));
+			state_machine.event_dispatcher.enqueue <Event::Push_State> (std::make_unique <State::Options> (state_machine));
 			
 		};
 		

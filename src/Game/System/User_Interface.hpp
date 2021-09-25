@@ -6,6 +6,7 @@
 #include "EnTT/Event_Dispatcher.hpp"
 #include "Event/Mouse_Pressed_Left.hpp"
 #include "Event/Mouse_Moved.hpp"
+#include "Event/Window_Recreate.hpp"
 #include "System/Physics.hpp"
 #include "Component/Graphics/Drawable.hpp"
 #include "Component/UI/Button.hpp"
@@ -31,7 +32,7 @@ public:
 		ecs.on_construct <Component::UI::Button> ().connect <&System::User_Interface::on_construct_button> (this);
 		event_dispatcher.sink <Event::Mouse_Moved> ().connect <&System::User_Interface::on_mouse_moved> (this);
 		event_dispatcher.sink <Event::Mouse_Pressed_Left> ().connect <&System::User_Interface::on_mouse_pressed_left> (this);
-	
+		
 	};
 
 private:
@@ -84,16 +85,19 @@ private:
 	
 	void on_mouse_pressed_left(const Event::Mouse_Pressed_Left& event) {
 		
+		
 		if (active_button == entt::null || !ecs.valid(active_button)) return;
 		
 		auto& button = ecs.get <Component::UI::Button> (active_button);
 		auto& drawable = static_cast <SFML::Button&> (*ecs.get <Component::Graphics::Drawable> (active_button).pointer);
 		if (drawable.contains(event.position)) {
+			std::cout << "!!!!! \n";
 			if (button.on_mouse_pressed_left) button.on_mouse_pressed_left();
 		};
 		
 	};
-	
+		
+
 };
 	
 	

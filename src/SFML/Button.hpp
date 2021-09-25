@@ -11,7 +11,7 @@ namespace SFML {
 	
 	
 	
-class Button : public sf::Drawable {
+class Button : public SFML::Drawable {
 	
 public:
 

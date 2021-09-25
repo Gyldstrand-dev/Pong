@@ -326,12 +326,12 @@ CMakeFiles/Pong.dir/main.cpp.obj: C:\DEV\projects\SFML\Pong\main.cpp \
  C:/DEV/lib/Box2D/include/box2d/b2_body.h \
  C:/DEV/projects/SFML/Pong/src/Game/System/Graphics.hpp \
  C:/DEV/projects/SFML/Pong/src/Game/Component/Graphics/Drawable.hpp \
- C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+ C:/DEV/projects/SFML/Pong/src/SFML/Drawable.hpp \
+ C:/DEV/projects/SFML/Pong/src/Game/Component/UI/Button.hpp \
+ C:/DEV/projects/SFML/Pong/src/SFML/Font.hpp \
  C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Font.hpp \
  C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
  C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
- C:/DEV/projects/SFML/Pong/src/Game/Component/UI/Button.hpp \
- C:/DEV/projects/SFML/Pong/src/SFML/Font.hpp \
  C:/DEV/projects/SFML/Pong/src/SFML/Color.hpp \
  C:/DEV/projects/SFML/Pong/src/Game/Resource/Font/Loader.hpp \
  C:/DEV/projects/SFML/Pong/src/EnTT/Resource_Loader.hpp \
@@ -346,9 +346,9 @@ CMakeFiles/Pong.dir/main.cpp.obj: C:\DEV\projects\SFML\Pong\main.cpp \
  C:/DEV/projects/SFML/Pong/src/Game/Event/Mouse_Moved.hpp \
  C:/DEV/projects/SFML/Pong/src/Game/Event/Window_Recreate.hpp \
  C:/DEV/projects/SFML/Pong/src/SFML/Button.hpp \
- C:/DEV/projects/SFML/Pong/src/SFML/Drawable.hpp \
  C:/DEV/projects/SFML/Pong/src/SFML/Rectangle.hpp \
  C:/DEV/projects/SFML/Pong/src/SFML/Text.hpp \
+ C:/DEV/lib/SFML-2.5.1/include/SFML/Graphics/Text.hpp \
  C:/DEV/projects/SFML/Pong/src/Game/Event/Push_State.hpp \
  C:/DEV/projects/SFML/Pong/src/Game/Event/Pop_State.hpp \
  C:/DEV/projects/SFML/Pong/src/Game/State/Intro.hpp \
@@ -356,11 +356,10 @@ CMakeFiles/Pong.dir/main.cpp.obj: C:\DEV\projects\SFML\Pong\main.cpp \
  C:/DEV/projects/SFML/Pong/src/Game/State/Play.hpp \
  C:/DEV/projects/SFML/Pong/src/Game/State/End_Round.hpp \
  C:/DEV/projects/SFML/Pong/src/Game/State/Begin_Round.hpp \
- C:/DEV/projects/SFML/Pong/src/Game/State/Pause.hpp \
- C:/DEV/projects/SFML/Pong/src/Game/Event/Key_Pressed.hpp \
  C:/DEV/projects/SFML/Pong/src/Game/State/Options.hpp \
  C:/DEV/projects/SFML/Pong/src/Game/State/Options_Resolution.hpp \
  C:/DEV/projects/SFML/Pong/src/Game/Event/Exit.hpp \
+ C:/DEV/projects/SFML/Pong/src/Game/Event/Key_Pressed.hpp \
  C:/DEV/projects/SFML/Pong/src/Game/Event/Launch_Ball.hpp \
  C:/DEV/projects/SFML/Pong/src/Game/Event/Reset.hpp \
  C:/DEV/projects/SFML/Pong/src/Box2D/Shape.hpp \

@@ -58,10 +58,12 @@ private:
 			
 			auto& button = ecs.get <Component::UI::Button> (active_button);
 			auto& drawable = static_cast <SFML::Button&> (*ecs.get <Component::Graphics::Drawable> (active_button).pointer);
+			
 			if (!drawable.contains(event.position)) {
-				if (button.on_mouse_exit) button.on_mouse_exit();
+				
 				active_button = entt::null;
-				return;
+				if (button.on_mouse_exit) button.on_mouse_exit();
+				
 			};
 			
 		} else {
@@ -71,10 +73,13 @@ private:
 				
 				auto& button = ecs.get <Component::UI::Button> (entity);
 				auto& drawable = static_cast <SFML::Button&> (*ecs.get <Component::Graphics::Drawable> (entity).pointer);
+				
 				if (drawable.contains(event.position)) {
-					if (button.on_mouse_enter) button.on_mouse_enter();
+					
 					active_button = entity;
+					if (button.on_mouse_enter) button.on_mouse_enter();
 					return;
+					
 				};
 		
 			};
@@ -85,18 +90,19 @@ private:
 	
 	void on_mouse_pressed_left(const Event::Mouse_Pressed_Left& event) {
 		
-		
 		if (active_button == entt::null || !ecs.valid(active_button)) return;
 		
 		auto& button = ecs.get <Component::UI::Button> (active_button);
 		auto& drawable = static_cast <SFML::Button&> (*ecs.get <Component::Graphics::Drawable> (active_button).pointer);
+		
 		if (drawable.contains(event.position)) {
+			
 			if (button.on_mouse_pressed_left) button.on_mouse_pressed_left();
+			
 		};
 		
 	};
 		
-
 };
 	
 	

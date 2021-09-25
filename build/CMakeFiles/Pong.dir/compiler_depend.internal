@@ -360,11 +360,10 @@ CMakeFiles/Pong.dir/main.cpp.obj
  C:/DEV/projects/SFML/Pong/src/Game/State/Play.hpp
  C:/DEV/projects/SFML/Pong/src/Game/State/End_Round.hpp
  C:/DEV/projects/SFML/Pong/src/Game/State/Begin_Round.hpp
- C:/DEV/projects/SFML/Pong/src/Game/State/Pause.hpp
- C:/DEV/projects/SFML/Pong/src/Game/Event/Key_Pressed.hpp
  C:/DEV/projects/SFML/Pong/src/Game/State/Options.hpp
  C:/DEV/projects/SFML/Pong/src/Game/State/Options_Resolution.hpp
  C:/DEV/projects/SFML/Pong/src/Game/Event/Exit.hpp
+ C:/DEV/projects/SFML/Pong/src/Game/Event/Key_Pressed.hpp
  C:/DEV/projects/SFML/Pong/src/Game/Event/Launch_Ball.hpp
  C:/DEV/projects/SFML/Pong/src/Game/Event/Reset.hpp
  C:/DEV/projects/SFML/Pong/src/Box2D/Shape.hpp

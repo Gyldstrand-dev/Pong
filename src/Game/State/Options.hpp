@@ -38,7 +38,12 @@ public:
 		
 	};
 	
-	void update(const Time::Duration&, System::Physics&) {};
+	void update(const Time::Duration& timestep, System::Physics& physics_system) {
+		
+		physics_system.update(timestep);
+		physics_system.clear_forces();
+		
+	};
 
 private:
 	

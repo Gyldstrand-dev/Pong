@@ -3,7 +3,7 @@
 #include "State/Base.hpp"
 #include "State/Play.hpp"
 #include "State/Begin_Round.hpp"
-#include "State/Pause.hpp"
+#include "State/Options.hpp"
 #include "EnTT/Registry.hpp"
 #include "EnTT/Handle.hpp"
 #include "System/Physics.hpp"
@@ -12,6 +12,7 @@
 #include "Event/Key_Pressed.hpp"
 #include "Event/Reset.hpp"
 #include <iostream>
+
 
 namespace State {
 	
@@ -27,17 +28,9 @@ public:
 	End_Round(State::Machine& state_machine, EnTT::Handle player, EnTT::Handle opponent, EnTT::Handle ball, EnTT::Handle scoreboard)
 	:	Base {state_machine}, player {player}, opponent {opponent}, ball {ball}, scoreboard {scoreboard} {};
 
-	void push() override {
-		
-		create_entities();
-		
-	};
+	void push() override {};
 	
-	void pop() override {
-		
-		destroy_entities();
-
-	};
+	void pop() override {};
 	
 	void enter() override {
 		
@@ -57,8 +50,9 @@ public:
 		
 		if (current_duration >= duration) {
 			
-			state_machine.event_dispatcher.enqueue <Event::Pop_State> ();
 			state_machine.event_dispatcher.enqueue <Event::Reset> ();
+			state_machine.event_dispatcher.enqueue <Event::Pop_State> ();
+			state_machine.event_dispatcher.enqueue <Event::Push_State> (std::make_unique <State::Begin_Round> (state_machine, player, ball));
 			
 		} else {
 			
@@ -67,9 +61,9 @@ public:
 			scoreboard_text.setFillColor({255, 255, 255, fade});
 			
 		};
+		
 	};
 
-	
 private:
 
 	void connect_event_listeners() {
@@ -86,15 +80,11 @@ private:
 	
 	};
 	
-	void create_entities() {};
-	
-	void destroy_entities() {};
-	
 	void on_key_pressed(const Event::Key_Pressed& event) {
 		
 		if (event.key == sf::Keyboard::Escape) {
 			
-			state_machine.event_dispatcher.enqueue <Event::Push_State> (std::make_unique <State::Pause> (state_machine));
+			state_machine.event_dispatcher.enqueue <Event::Push_State> (std::make_unique <State::Options> (state_machine));
 			
 		};
 		
@@ -115,8 +105,7 @@ private:
 		ball_body.set_angular_velocity(0.f);
 		auto& scoreboard_text = static_cast <sf::Text&> (*scoreboard.get <Component::Graphics::Drawable> ().pointer);
 		scoreboard_text.setFillColor({255, 255, 255, 0});
-		state_machine.event_dispatcher.enqueue <Event::Push_State> (std::make_unique <State::Begin_Round> (state_machine, player, ball));
-	
+		
 	};
 
 };

@@ -359,11 +359,10 @@ CMakeFiles/Pong.dir/main.cpp.obj: ../main.cpp \
   ../src/Game/State/Play.hpp \
   ../src/Game/State/End_Round.hpp \
   ../src/Game/State/Begin_Round.hpp \
-  ../src/Game/State/Pause.hpp \
-  ../src/Game/Event/Key_Pressed.hpp \
   ../src/Game/State/Options.hpp \
   ../src/Game/State/Options_Resolution.hpp \
   ../src/Game/Event/Exit.hpp \
+  ../src/Game/Event/Key_Pressed.hpp \
   ../src/Game/Event/Launch_Ball.hpp \
   ../src/Game/Event/Reset.hpp \
   ../src/Box2D/Shape.hpp \
@@ -390,9 +389,9 @@ C:/DEV/lib/Box2D/include/box2d/b2_polygon_shape.h:
 
 ../src/Game/Event/Launch_Ball.hpp:
 
-../src/Game/State/Options.hpp:
-
 ../src/Game/Event/Key_Pressed.hpp:
+
+../src/Game/State/Options.hpp:
 
 ../src/Game/Component/Score.hpp:
 
@@ -561,8 +560,6 @@ C:/msys64/mingw64/include/c++/10.3.0/bits/streambuf_iterator.h:
 C:/msys64/mingw64/include/c++/10.3.0/cstdio:
 
 C:/msys64/mingw64/x86_64-w64-mingw32/include/stdio.h:
-
-../src/Game/State/Pause.hpp:
 
 C:/msys64/mingw64/include/c++/10.3.0/bits/cxxabi_forced.h:
 

@@ -3,7 +3,6 @@
 #include "State/Machine.hpp"
 #include "State/End_Round.hpp"
 #include "State/Begin_Round.hpp"
-#include "State/Pause.hpp"
 #include "State/Options.hpp"
 #include "EnTT/Registry.hpp"
 #include "EnTT/Handle.hpp"
